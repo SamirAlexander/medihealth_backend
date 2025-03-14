@@ -16,12 +16,17 @@ public class PacienteService {
   }
 
  
- /*  public Paciente save(PacienteDTO pacienteDTO) {
+   public Paciente save(PacienteDTO pacienteDTO) {
     Paciente paciente = new Paciente();
     paciente.setIdPaciente(pacienteDTO.getIdPaciente());
 
 
-    return pacienteRepository.save(pacienteDTO);
-  } */
+
+
+
+
+
+    return pacienteRepository.save(paciente);
+  } 
 
 }
