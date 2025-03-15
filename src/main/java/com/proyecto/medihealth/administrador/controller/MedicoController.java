@@ -14,7 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.proyecto.medihealth.administrador.dto.MedicoDTO;
 import com.proyecto.medihealth.administrador.model.Medico;
 import com.proyecto.medihealth.administrador.service.MedicoService;
+
+
+import jakarta.validation.Valid;
+
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 
 
@@ -28,8 +33,9 @@ public class MedicoController {
     // POST /administrador/medicos
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Medico crearMedico(@RequestBody MedicoDTO medicoDTO) {
-        return medicoService.crearMedico(medicoDTO);
+    public ResponseEntity<String> crearMedico(@Valid @RequestBody MedicoDTO medicoDTO) {
+        medicoService.crearMedico(medicoDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body("Se creo correctamente");
     }
 
     // GET /administrador/medicos/{id}
@@ -46,14 +52,16 @@ public class MedicoController {
 
     // PUT /administrador/medicos/{id}
     @PutMapping("/{id}")
-    public Medico actualizarMedico(@PathVariable int id, @RequestBody MedicoDTO medicoDTO) {
-        return medicoService.actualizarMedico(id, medicoDTO);
+    public ResponseEntity<String> actualizarMedico(@PathVariable("id") int id, @Valid @RequestBody MedicoDTO medicoDTO) {
+        medicoService.actualizarMedico(id, medicoDTO);
+        return ResponseEntity.status(HttpStatus.OK).body("Se modifico Medico");
     }
 
     // DELETE /administrador/medicos/{id}
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void eliminarMedico(@PathVariable int id) {
+    public ResponseEntity<String> eliminarMedico(@PathVariable int id) {
         medicoService.eliminarMedico(id);
+        return ResponseEntity.status(HttpStatus.OK).body("Se elimina Registro");
     }
 }

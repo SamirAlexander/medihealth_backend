@@ -36,7 +36,7 @@ public class Medico {
     private String correo;
 
     @Column(name = "contraseña", nullable = false, length = 255)
-    private String contraseña;
+    private String contrasena;
 
     @Column(name = "rol", nullable = false, length = 50)
     private String rol;

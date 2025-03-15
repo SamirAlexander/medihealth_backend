@@ -17,13 +17,13 @@ public class MedicoService {
     // POST /Crear nuevo médico
     public Medico crearMedico(MedicoDTO medicoDTO) {
         Medico medico = new Medico();
-        medico.setIdUsuario(medicoDTO.getIdUsuario());
+        /* medico.setIdUsuario(medicoDTO.getIdUsuario()); */
         medico.setDocumentoIdentidad(medicoDTO.getDocumentoIdentidad());
         medico.setNombre(medicoDTO.getNombre());
         medico.setApellido(medicoDTO.getApellido());
-        medico.setTelefono(medicoDTO.getTeléfono());
+        medico.setTelefono(medicoDTO.getTelefono());
         medico.setCorreo(medicoDTO.getCorreo());
-        medico.setContraseña(medicoDTO.getContraseña());
+        medico.setContrasena(medicoDTO.getContrasena());
         medico.setRol(medicoDTO.getRol());
         medico.setDependencia(medicoDTO.getDependencia());
         medico.setHorarioTrabajo(medicoDTO.getHorarioTrabajo());
@@ -51,13 +51,13 @@ public class MedicoService {
         
         if (medicoExistente.isPresent()) {
             Medico medico = medicoExistente.get();
-            medico.setIdUsuario(medicoDTO.getIdUsuario());
+           /*  medico.setIdUsuario(medicoDTO.getIdUsuario()); */
             medico.setDocumentoIdentidad(medicoDTO.getDocumentoIdentidad());
             medico.setNombre(medicoDTO.getNombre());
             medico.setApellido(medicoDTO.getApellido());
-            medico.setTelefono(medicoDTO.getTeléfono());
+            medico.setTelefono(medicoDTO.getTelefono());
             medico.setCorreo(medicoDTO.getCorreo());
-            medico.setContraseña(medicoDTO.getContraseña());
+            medico.setContrasena(medicoDTO.getContrasena());
             medico.setRol(medicoDTO.getRol());
             medico.setDependencia(medicoDTO.getDependencia());
             medico.setHorarioTrabajo(medicoDTO.getHorarioTrabajo());
