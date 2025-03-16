@@ -57,7 +57,7 @@ public class AdministradorController {
     // PUT /administrador/administradores/{id}
     // modificar admnistrador
     @PutMapping("/{id}")
-    public ResponseEntity<String> actualizarAdministrador(@PathVariable("id") int id, @Valid @RequestBody AdministradorDTO administradorDTO) {
+    public ResponseEntity<String> actualizarAdministrador(@PathVariable int id, @Valid @RequestBody AdministradorDTO administradorDTO) {
         Administrador administrador = administradorService.actualizarAdministrador(id, administradorDTO);
         if (administrador != null) {
             return ResponseEntity.status(HttpStatus.OK).body("Administrador actualizado correctamente");

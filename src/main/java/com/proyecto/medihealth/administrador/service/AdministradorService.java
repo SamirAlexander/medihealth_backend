@@ -22,7 +22,7 @@ public class AdministradorService {
         administrador.setApellido(administradorDTO.getApellido());
         administrador.setTelefono(administradorDTO.getTelefono());
         administrador.setCorreo(administradorDTO.getCorreo());
-        administrador.setContraseña(administradorDTO.getContrasena());
+        administrador.setContrasena(administradorDTO.getContrasena());
         administrador.setRol(administradorDTO.getRol());
         administrador.setIdAdmin(administradorDTO.getIdAdmin());
         administrador.setDepartamento(administradorDTO.getDepartamento());
@@ -56,7 +56,7 @@ public class AdministradorService {
             administrador.setApellido(administradorDTO.getApellido());
             administrador.setTelefono(administradorDTO.getTelefono());
             administrador.setCorreo(administradorDTO.getCorreo());
-            administrador.setContraseña(administradorDTO.getContrasena());
+            administrador.setContrasena(administradorDTO.getContrasena());
             administrador.setRol(administradorDTO.getRol());
             administrador.setIdAdmin(administradorDTO.getIdAdmin());
             administrador.setDepartamento(administradorDTO.getDepartamento());
