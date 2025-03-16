@@ -31,6 +31,7 @@ public class MedicoController {
     private MedicoService medicoService;
 
     // POST /administrador/medicos
+    // Agregar Medico
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<String> crearMedico(@Valid @RequestBody MedicoDTO medicoDTO) {
@@ -39,18 +40,21 @@ public class MedicoController {
     }
 
     // GET /administrador/medicos/{id}
+    //Obtener Medico
     @GetMapping("/{id}")
     public Medico obtenerMedico(@PathVariable int id) {
         return medicoService.obtenerMedicoPorId(id);
     }
 
     // GET /administrador/medicos
+    // Listar Medico
     @GetMapping
     public List<Medico> obtenerTodosMedicos() {
         return medicoService.obtenerTodosMedicos();
     }
 
     // PUT /administrador/medicos/{id}
+    // Modificar Medico
     @PutMapping("/{id}")
     public ResponseEntity<String> actualizarMedico(@PathVariable("id") int id, @Valid @RequestBody MedicoDTO medicoDTO) {
         medicoService.actualizarMedico(id, medicoDTO);
@@ -58,6 +62,7 @@ public class MedicoController {
     }
 
     // DELETE /administrador/medicos/{id}
+    //Eliminar Medico
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<String> eliminarMedico(@PathVariable int id) {
