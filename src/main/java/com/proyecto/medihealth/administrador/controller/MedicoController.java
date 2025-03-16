@@ -56,7 +56,7 @@ public class MedicoController {
     // PUT /administrador/medicos/{id}
     // Modificar Medico
     @PutMapping("/{id}")
-    public ResponseEntity<String> actualizarMedico(@PathVariable("id") int id, @Valid @RequestBody MedicoDTO medicoDTO) {
+    public ResponseEntity<String> actualizarMedico(@PathVariable int id, @Valid @RequestBody MedicoDTO medicoDTO) {
         medicoService.actualizarMedico(id, medicoDTO);
         return ResponseEntity.status(HttpStatus.OK).body("Se modifico Medico");
     }
