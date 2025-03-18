@@ -39,7 +39,7 @@ public class AdministradorController {
     // GET /administrador/administradores/{id}
     // Obtener administrador
     @GetMapping("/{id}")
-    public Administrador obtenerAdministrador(@PathVariable int id) {
+    public Administrador obtenerAdministrador(@PathVariable("id") int id) {
         Administrador administrador = administradorService.obtenerAdministradorPorId(id);
         if (administrador != null) {
             return administrador;
@@ -57,7 +57,7 @@ public class AdministradorController {
     // PUT /administrador/administradores/{id}
     // modificar admnistrador
     @PutMapping("/{id}")
-    public ResponseEntity<String> actualizarAdministrador(@PathVariable int id, @Valid @RequestBody AdministradorDTO administradorDTO) {
+    public ResponseEntity<String> actualizarAdministrador(@PathVariable("id") int id, @Valid @RequestBody AdministradorDTO administradorDTO) {
         Administrador administrador = administradorService.actualizarAdministrador(id, administradorDTO);
         if (administrador != null) {
             return ResponseEntity.status(HttpStatus.OK).body("Administrador actualizado correctamente");
@@ -69,7 +69,7 @@ public class AdministradorController {
     // Eliminar administrador
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public ResponseEntity<String> eliminarAdministrador(@PathVariable int id) {
+    public ResponseEntity<String> eliminarAdministrador(@PathVariable("id") int id) {
         administradorService.eliminarAdministrador(id);
         return ResponseEntity.status(HttpStatus.OK).body("Administrador eliminado correctamente");
     }

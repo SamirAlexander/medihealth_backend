@@ -42,7 +42,7 @@ public class MedicoController {
     // GET /administrador/medicos/{id}
     //Obtener Medico
     @GetMapping("/{id}")
-    public Medico obtenerMedico(@PathVariable int id) {
+    public Medico obtenerMedico(@PathVariable("id") int id) {
         return medicoService.obtenerMedicoPorId(id);
     }
 
@@ -56,7 +56,7 @@ public class MedicoController {
     // PUT /administrador/medicos/{id}
     // Modificar Medico
     @PutMapping("/{id}")
-    public ResponseEntity<String> actualizarMedico(@PathVariable int id, @Valid @RequestBody MedicoDTO medicoDTO) {
+    public ResponseEntity<String> actualizarMedico(@PathVariable("id") int id, @Valid @RequestBody MedicoDTO medicoDTO) {
         medicoService.actualizarMedico(id, medicoDTO);
         return ResponseEntity.status(HttpStatus.OK).body("Se modifico Medico");
     }
@@ -65,7 +65,7 @@ public class MedicoController {
     //Eliminar Medico
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public ResponseEntity<String> eliminarMedico(@PathVariable int id) {
+    public ResponseEntity<String> eliminarMedico(@PathVariable("id") int id) {
         medicoService.eliminarMedico(id);
         return ResponseEntity.status(HttpStatus.OK).body("Se elimina Registro");
     }

@@ -39,7 +39,7 @@ public class PacienteController {
   // GET /administrador/pacientes/{id}
   // Obtener Paciente
   @GetMapping("/{id}")
-  public Paciente obtenerPaciente(@PathVariable int id) {
+  public Paciente obtenerPaciente(@PathVariable("id") int id) {
     return pacienteService.obtenerPacientePorId(id);
   }
 
@@ -53,7 +53,7 @@ public class PacienteController {
   // PUT /administrador/pacientes/{id}
   // Modificar Pacientes
   @PutMapping("/{id}")
-  public ResponseEntity<String> actualizarPaciente(@PathVariable int id,
+  public ResponseEntity<String> actualizarPaciente(@PathVariable("id") int id,
       @Valid @RequestBody PacienteDTO pacienteDTO) {
     pacienteService.actualizarPaciente(id, pacienteDTO);
     return ResponseEntity.status(HttpStatus.OK).body("Se modifico Paciente");
@@ -63,7 +63,7 @@ public class PacienteController {
   // Eliminar Paciente
   @DeleteMapping("/{id}")
   @ResponseStatus(HttpStatus.NO_CONTENT)
-  public ResponseEntity<String> eliminarPaciente(@PathVariable int id) {
+  public ResponseEntity<String> eliminarPaciente(@PathVariable("id") int id) {
     pacienteService.eliminarPaciente(id);
     return ResponseEntity.status(HttpStatus.OK).body("Se elimina Registro");
   }
