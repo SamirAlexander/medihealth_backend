@@ -18,13 +18,6 @@ public class MedicoService {
     public Medico crearMedico(MedicoDTO medicoDTO) {
         Medico medico = new Medico();
         /* medico.setIdUsuario(medicoDTO.getIdUsuario()); */
-        medico.setDocumentoIdentidad(medicoDTO.getDocumentoIdentidad());
-        medico.setNombre(medicoDTO.getNombre());
-        medico.setApellido(medicoDTO.getApellido());
-        medico.setTelefono(medicoDTO.getTelefono());
-        medico.setCorreo(medicoDTO.getCorreo());
-        medico.setContrasena(medicoDTO.getContrasena());
-        medico.setRol(medicoDTO.getRol());
         medico.setDependencia(medicoDTO.getDependencia());
         medico.setHorarioTrabajo(medicoDTO.getHorarioTrabajo());
         medico.setNumeroLicencia(medicoDTO.getNumeroLicencia());
@@ -52,13 +45,6 @@ public class MedicoService {
         if (medicoExistente.isPresent()) {
             Medico medico = medicoExistente.get();
            /*  medico.setIdUsuario(medicoDTO.getIdUsuario()); */
-            medico.setDocumentoIdentidad(medicoDTO.getDocumentoIdentidad());
-            medico.setNombre(medicoDTO.getNombre());
-            medico.setApellido(medicoDTO.getApellido());
-            medico.setTelefono(medicoDTO.getTelefono());
-            medico.setCorreo(medicoDTO.getCorreo());
-            medico.setContrasena(medicoDTO.getContrasena());
-            medico.setRol(medicoDTO.getRol());
             medico.setDependencia(medicoDTO.getDependencia());
             medico.setHorarioTrabajo(medicoDTO.getHorarioTrabajo());
             medico.setNumeroLicencia(medicoDTO.getNumeroLicencia());
