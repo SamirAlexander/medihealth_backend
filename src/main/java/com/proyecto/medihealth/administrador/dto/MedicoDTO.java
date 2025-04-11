@@ -15,27 +15,6 @@ public class MedicoDTO {
    /*  @NotNull(message = "El ID del usuario no puede ser nulo")
     private int idUsuario; */
 
-    @NotBlank(message = "El documento de identidad es obligatorio")
-    private String documentoIdentidad;
-
-    @NotBlank(message = "El nombre no puede estar vacío")
-    private String nombre;
-
-    @NotBlank(message = "El apellido no puede estar vacío")
-    private String apellido;
-
-    @Pattern(regexp = "^\\d{10}$", message = "El teléfono debe tener 10 dígitos")
-    private String telefono;
-
-    @Email(message = "El correo electrónico no tiene un formato válido")
-    private String correo;
-
-    @NotBlank(message = "La contraseña es obligatoria")
-    private String contrasena;
-
-    @NotBlank(message = "El rol es obligatorio")
-    private String rol;
-
     @NotNull(message = "El ID del médico no puede ser nulo")
     private int idMedico;
 

@@ -16,13 +16,6 @@ public class PacienteService {
   // POST /Crear nuevo paciente
   public Paciente crearPaciente(PacienteDTO pacienteDTO) {
     Paciente paciente = new Paciente();
-    paciente.setDocumentoIdentidad(pacienteDTO.getDocumentoIdentidad());
-    paciente.setNombre(pacienteDTO.getNombre());
-    paciente.setApellido(pacienteDTO.getApellido());
-    paciente.setTelefono(pacienteDTO.getTelefono());
-    paciente.setCorreo(pacienteDTO.getCorreo());
-    paciente.setContrasena(pacienteDTO.getContrasena());
-    paciente.setRol(pacienteDTO.getRol());
     paciente.setIdPaciente(pacienteDTO.getIdPaciente());
     paciente.setHistorialMedico(pacienteDTO.getHistorialMedico());
     paciente.setNumeroSeguro(pacienteDTO.getNumeroSeguro());
@@ -52,13 +45,6 @@ public class PacienteService {
 
     if (pacienteExistente.isPresent()) {
       Paciente paciente = pacienteExistente.get();
-      paciente.setDocumentoIdentidad(pacienteDTO.getDocumentoIdentidad());
-      paciente.setNombre(pacienteDTO.getNombre());
-      paciente.setApellido(pacienteDTO.getApellido());
-      paciente.setTelefono(pacienteDTO.getTelefono());
-      paciente.setCorreo(pacienteDTO.getCorreo());
-      paciente.setContrasena(pacienteDTO.getContrasena());
-      paciente.setRol(pacienteDTO.getRol());
       paciente.setIdPaciente(pacienteDTO.getIdPaciente());
       paciente.setHistorialMedico(pacienteDTO.getHistorialMedico());
       paciente.setNumeroSeguro(pacienteDTO.getNumeroSeguro());
