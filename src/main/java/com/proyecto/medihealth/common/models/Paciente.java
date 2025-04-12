@@ -1,15 +1,9 @@
-package com.proyecto.medihealth.administrador.model;
+package com.proyecto.medihealth.common.models;
 
 import java.sql.Date;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,9 +15,9 @@ public class Paciente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     @Column(name = "idPaciente", nullable = false)
     private int idPaciente;
+
 
     @Column(name = "historialMedico", length = 500)
     private String historialMedico;
@@ -48,4 +42,10 @@ public class Paciente {
     @Temporal(TemporalType.DATE)
     @Column(name = "proximaCita")
     private Date proximaCita;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "documentoIdentidad", referencedColumnName = "documentoIdentidad", nullable = false)
+    @JsonIgnoreProperties("paciente")
+    private Usuario usuario;
+
 }

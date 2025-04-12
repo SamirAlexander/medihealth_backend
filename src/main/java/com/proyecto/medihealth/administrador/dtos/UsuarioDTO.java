@@ -1,6 +1,7 @@
-package com.proyecto.medihealth.administrador.dto;
+package com.proyecto.medihealth.administrador.dtos;
 
 
+import com.proyecto.medihealth.common.models.Usuario;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -41,4 +42,8 @@ public class UsuarioDTO {
     @NotBlank(message = "El rol no puede estar vacío")
     @Size(max = 20, message = "El rol no puede tener más de 20 caracteres")
     private String rol;
+
+    private PacienteDTO paciente;
+
+
 }

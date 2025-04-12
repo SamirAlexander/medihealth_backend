@@ -1,11 +1,7 @@
-package com.proyecto.medihealth.administrador.model;
+package com.proyecto.medihealth.common.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,9 +13,8 @@ public class Medico {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     @Column(name = "idMedico")
-    private int idMedico;  
+    private int idMedico;
 
     @Column(name = "dependencia", nullable = false, length = 100)
     private String dependencia;
@@ -35,6 +30,11 @@ public class Medico {
 
     @Column(name = "noConsultorio", nullable = true, length = 20)
     private String noConsultorio;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "documentoIdentidad", referencedColumnName = "documentoIdentidad", nullable = false)
+    @JsonIgnoreProperties("medico")
+    private Usuario usuario;
     }
 
 

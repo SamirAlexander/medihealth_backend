@@ -1,11 +1,7 @@
-package com.proyecto.medihealth.administrador.model;
+package com.proyecto.medihealth.common.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,7 +13,6 @@ public class Administrador {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     @Column(name = "idAdmin", nullable = false)
     private int idAdmin;
 
@@ -32,5 +27,10 @@ public class Administrador {
 
     @Column(name = "tareasAsignadas", length = 500)
     private String tareasAsignadas;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "documentoIdentidad", referencedColumnName = "documentoIdentidad", nullable = false)
+    @JsonIgnoreProperties("administrador")
+    private Usuario usuario;
 
 }

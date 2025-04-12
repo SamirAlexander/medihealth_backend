@@ -1,4 +1,4 @@
-package com.proyecto.medihealth.administrador.controller;
+package com.proyecto.medihealth.administrador.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import com.proyecto.medihealth.administrador.dto.AdministradorDTO;
-import com.proyecto.medihealth.administrador.model.Administrador;
-import com.proyecto.medihealth.administrador.service.AdministradorService;
+import com.proyecto.medihealth.administrador.dtos.AdministradorDTO;
+import com.proyecto.medihealth.common.models.Administrador;
+import com.proyecto.medihealth.administrador.services.AdministradorService;
 
 import jakarta.validation.Valid;
 

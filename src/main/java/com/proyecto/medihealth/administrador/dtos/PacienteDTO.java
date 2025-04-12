@@ -1,8 +1,9 @@
-package com.proyecto.medihealth.administrador.dto;
+package com.proyecto.medihealth.administrador.dtos;
 
 import java.sql.Date;
 
 
+import com.proyecto.medihealth.common.models.Paciente;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
@@ -36,4 +37,8 @@ public class PacienteDTO {
 
   private Date ultimaCita;
   private Date proximaCita;
+
+  private UsuarioDTO usuario;
+
+
 }

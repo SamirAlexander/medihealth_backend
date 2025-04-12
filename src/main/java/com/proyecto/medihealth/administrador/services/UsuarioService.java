@@ -1,10 +1,10 @@
-package com.proyecto.medihealth.administrador.service;
+package com.proyecto.medihealth.administrador.services;
 
 import java.util.List;
 
-import com.proyecto.medihealth.administrador.model.Usuario;
-import com.proyecto.medihealth.administrador.dto.UsuarioDTO;
-import com.proyecto.medihealth.administrador.repository.UsuarioRepository;
+import com.proyecto.medihealth.common.models.Usuario;
+import com.proyecto.medihealth.administrador.dtos.UsuarioDTO;
+import com.proyecto.medihealth.administrador.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
