@@ -1,38 +1,44 @@
 package com.proyecto.medihealth.common.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import lombok.*;
 
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "historiasClinicas")
+@Table(name = "historia_clinica")
 @Getter
 @Setter
 public class HistoriaClinica {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idHistoriaClinica", nullable = false)
-    private int idHistoriaClinica;
+    @Column(name = "id", nullable = false)
+    private int id;
 
-    @Column(name= "numeroHistoriaClinica", nullable = false)
-    private long numeroHistoriaClinica;
+    @Column(name = "numero_historia")
+    private long numeroHistoria;
 
-    @Column(name = "documentoIdentidadPaciente", nullable = false)
-    private int documentoIdentidadPaciente;
+    @Column(name = "paciente_id", nullable = false)
+    private String pacienteId;
 
-    @Column(name = "fechaCreacion", nullable = false)
+    @Column(name = "fecha_creacion", nullable = false)
     private String fechaCreacion;
 
-    @Column(name = "fechaModificacion", nullable = false)
-    private String informacionMedica;
+    @OneToMany(mappedBy = "historiaClinica", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties("historiaClinica")
+    private List<RecordMedico> recordsMedicos;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<RecordClinico> record = new ArrayList<>();
+    // Constructores, getters y setters
+    public HistoriaClinica() {
+    }
+
+    public HistoriaClinica(String pacienteId, String fechaCreacion) {
+        this.pacienteId = pacienteId;
+        this.fechaCreacion = fechaCreacion;
+    }
 }

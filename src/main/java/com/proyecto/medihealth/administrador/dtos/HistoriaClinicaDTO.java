@@ -10,24 +10,46 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
-
 public class HistoriaClinicaDTO {
-
-    private int idHistoriaClinica;
-
-    private int idPaciente;
-
-    @Size(max = 500, message = "El historial médico no puede tener más de 500 caracteres")
+    private Long numeroHistoria;
+    private String pacienteId;
     private String fechaCreacion;
+    private List<RecordMedicoDTO> recordsMedicos;
 
-    @Size(max = 50, message = "El número de seguro no puede tener más de 50 caracteres")
-    private String fechaModificacion;
+    // Getters y setters
+    public Long getNumeroHistoria() {
+        return numeroHistoria;
+    }
 
-    @NotBlank(message = "La dirección no puede estar vacía")
-    private String informacionMedica;
+    public void setNumeroHistoria(Long numeroHistoria) {
+        this.numeroHistoria = numeroHistoria;
+    }
 
-    private int idUsuario;
+    public String getPacienteId() {
+        return pacienteId;
+    }
 
+    public void setPacienteId(String pacienteId) {
+        this.pacienteId = pacienteId;
+    }
+
+    public String getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(String fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public List<RecordMedicoDTO> getRecordsMedicos() {
+        return recordsMedicos;
+    }
+
+    public void setRecordsMedicos(List<RecordMedicoDTO> recordsMedicos) {
+        this.recordsMedicos = recordsMedicos;
+    }
 }
