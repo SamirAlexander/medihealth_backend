@@ -1,6 +1,6 @@
 INSERT INTO usuarios ( apellido, contrasena, correo, documento_identidad, nombre, rol, telefono
 ) VALUES
-('Pérez', 'password123', 'juan.perez@example.com', '123456789', 'Juan', 'Paciente', '555-1234'),
+('Pérez', 'password123', 'juan.perez356@example.com', '123456789', 'Juan', 'Paciente', '555-1234'),
 ('Gómez', 'password123', 'ana.gomez526@example.com', '987654321', 'Ana', 'Paciente', '555-5678'),
 ('López', 'password123', 'carlos.lopez@example.com', '112233445', 'Carlos', 'Paciente', '555-9101'),
 ('Fernández', 'password123', 'maria.fernandez@example.com', '223344556', 'María', 'Paciente', '555-1122'),
@@ -137,8 +137,58 @@ INSERT INTO medicos (
 ('Radiología', 'Centro de Imagenología', '08:00-16:00', 120, 'LIC-020', '666000222');
 
 
+-- Insertar en historia_clinica
+INSERT INTO historia_clinica
+(antecedentes_medicos, contacto_emergencia, fecha_creacion, numero_historia, paciente_id, telefono_emergencia)
+VALUES
+('Diabetes tipo 2', 'Laura Pérez', '2025-04-01', 1001, 201, '5551234'),
+('Hipertensión', 'Carlos Gómez', '2025-04-03', 1002, 202, '5555678'),
+('Asma', 'María López', '2025-04-04', 1003, 203, '5559012'),
+('Alergia a penicilina', 'Ana Torres', '2025-04-05', 1004, 204, '5551111'),
+('Enfermedad celíaca', 'Luis Martínez', '2025-04-05', 1005, 205, '5552222'),
+('Migrañas crónicas', 'Esteban Ríos', '2025-04-06', 1006, 206, '5553333'),
+('Insuficiencia renal', 'Marta Sánchez', '2025-04-06', 1007, 207, '5554444'),
+('Artritis reumatoide', 'Tomás Díaz', '2025-04-07', 1008, 208, '5555555'),
+('Hipotiroidismo', 'Natalia Vega', '2025-04-07', 1009, 209, '5556666'),
+('Epilepsia', 'Ricardo Ruiz', '2025-04-08', 1010, 210, '5557777'),
+('Depresión', 'Daniela Mora', '2025-04-08', 1011, 211, '5558888'),
+('Colesterol alto', 'Iván Castro', '2025-04-09', 1012, 212, '5559999'),
+('Lupus', 'Claudia León', '2025-04-09', 1013, 213, '5550001'),
+('Asma', 'Silvia Torres', '2025-04-10', 1014, 214, '5550002'),
+('Obesidad', 'Jorge Méndez', '2025-04-10', 1015, 215, '5550003'),
+('Enfermedad de Crohn', 'Patricia Gil', '2025-04-11', 1016, 216, '5550004'),
+('Esclerosis múltiple', 'Héctor Bravo', '2025-04-11', 1017, 217, '5550005'),
+('Fibromialgia', 'Lucía Paredes', '2025-04-12', 1018, 218, '5550006'),
+('Glaucoma', 'Manuel Vela', '2025-04-12', 1019, 219, '5550007'),
+('Tabaquismo', 'Sofía Navarro', '2025-04-13', 1020, 220, '5550008');
 
 
+-- Insertar en registro_clinico (1 o 2 registros por historia)
+INSERT INTO record_medico
+(diagnostico, especialidad, fecha_registro, motivo_consulta, nombre_medico, record_medico, signos_vitales, numero_historia)
+VALUES
+('Hiperglucemia', 'Endocrinología', '2025-04-01', 'Control rutinario', 'Dr. Ramírez', 'Paciente estable, seguimiento en 3 meses', 'TA: 130/85, FC: 78', 1),
+('Revisión anual', 'Medicina General', '2025-04-02', 'Chequeo general', 'Dra. Salazar', 'Sin novedades importantes', 'TA: 120/80, FC: 72', 1),
+('Presión alta persistente', 'Cardiología', '2025-04-03', 'Dolor de cabeza frecuente', 'Dr. Herrera', 'Ajuste de medicación', 'TA: 150/95, FC: 88', 2),
+('Crisis asmática leve', 'Neumología', '2025-04-04', 'Dificultad para respirar', 'Dra. Morales', 'Se ajusta broncodilatador', 'TA: 118/76, FC: 90', 3),
+('Chequeo post-crisis', 'Neumología', '2025-04-06', 'Seguimiento de crisis previa', 'Dr. Ortega', 'Paciente responde bien al tratamiento', 'TA: 117/75, FC: 80', 3),
+('Reacción alérgica leve', 'Alergología', '2025-04-05', 'Erupción en la piel', 'Dra. Torres', 'Tratamiento con antihistamínicos', 'TA: 110/70, FC: 75', 4),
+('Dieta sin gluten', 'Gastroenterología', '2025-04-06', 'Malestar abdominal', 'Dr. Cano', 'Recomendación de seguimiento nutricional', 'TA: 115/78, FC: 73', 4),
+('Dolor de cabeza severo', 'Neurología', '2025-04-07', 'Crisis de migraña', 'Dr. Suárez', 'Cambio de tratamiento', 'TA: 125/80, FC: 85', 6),
+('Evaluación de función renal', 'Nefrología', '2025-04-08', 'Seguimiento', 'Dra. Rivas', 'Se programan nuevos análisis', 'TA: 128/84, FC: 82', 7),
+('Dolor articular', 'Reumatología', '2025-04-09', 'Molestias en las manos', 'Dr. Acosta', 'Se inicia tratamiento con AINEs', 'TA: 122/79, FC: 76', 7),
+('Examen tiroideo', 'Endocrinología', '2025-04-10', 'Fatiga', 'Dra. Linares', 'Niveles de TSH elevados', 'TA: 119/77, FC: 74', 8),
+('Control de crisis', 'Neurología', '2025-04-11', 'Convulsión reciente', 'Dr. Muñoz', 'Revisión de medicamentos', 'TA: 124/82, FC: 87', 9),
+('Seguimiento emocional', 'Psicología', '2025-04-12', 'Síntomas depresivos', 'Lic. Castro', 'Inicio de psicoterapia', 'TA: 116/78, FC: 70', 9),
+('Chequeo lipídico', 'Medicina Interna', '2025-04-13', 'Colesterol alto', 'Dra. Fabián', 'Dieta recomendada, control en 3 meses', 'TA: 121/79, FC: 71', 10),
+('Control de lupus', 'Reumatología', '2025-04-14', 'Dolor generalizado', 'Dr. Ibáñez', 'Paciente con brote leve', 'TA: 117/76, FC: 79', 11),
+('Revisión respiratoria', 'Neumología', '2025-04-15', 'Tos persistente', 'Dra. Silva', 'Broncodilatador recetado', 'TA: 118/78, FC: 80', 11),
+('Evaluación de peso', 'Nutrición', '2025-04-15', 'Obesidad grado 1', 'Lic. Ortega', 'Plan nutricional entregado', 'TA: 130/85, FC: 88', 13),
+('Evaluación digestiva', 'Gastroenterología', '2025-04-16', 'Dolor abdominal crónico', 'Dr. García', 'Tratamiento con mesalazina', 'TA: 119/76, FC: 82', 14),
+('Evaluación neurológica', 'Neurología', '2025-04-16', 'Debilidad muscular', 'Dra. Zamora', 'Solicita resonancia', 'TA: 122/80, FC: 78', 14),
+('Dolor muscular general', 'Reumatología', '2025-04-17', 'Dolor crónico', 'Dr. Molina', 'Recomienda actividad física ligera', 'TA: 121/81, FC: 75', 15),
+('Evaluación oftalmológica', 'Oftalmología', '2025-04-18', 'Pérdida de visión periférica', 'Dra. Quintero', 'Inicio de tratamiento', 'TA: 117/74, FC: 76', 16),
+('Consejería para dejar de fumar', 'Medicina General', '2025-04-18', 'Tabaquismo', 'Dr. Villalobos', 'Paciente motivado, se agenda seguimiento', 'TA: 115/75, FC: 72', 17);
 
 
 

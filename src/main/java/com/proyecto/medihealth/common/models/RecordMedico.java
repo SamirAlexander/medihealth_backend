@@ -22,6 +22,22 @@ public class RecordMedico {
     @Column(name = "fecha_registro", nullable = false)
     private String fechaRegistro;
 
+    @Column(name = "signos_vitales", nullable = false)
+    private String signosVitales;
+
+    @Column(name = "motivo_consulta", nullable = false)
+    private String motivoConsulta;
+
+    @Column(name = "especialidad", nullable = false)
+    private String especialidad;
+
+    @Column(name = "diagnostico", nullable = false)
+    private String diagnostico;
+
+    @Column(name = "nombre_medico", nullable = false)
+    private String nombreMedico;
+
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "numero_historia", nullable = false)
     @JsonIgnoreProperties("numeroHistoria")
@@ -30,11 +46,15 @@ public class RecordMedico {
     // Constructores, getters y setters
     public RecordMedico() {}
 
-    public RecordMedico(String recordMedico, String fechaRegistro, HistoriaClinica historiaClinica) {
+    public RecordMedico(String recordMedico, String fechaRegistro, HistoriaClinica historiaClinica,
+                        String signosVitales, String motivoConsulta, String especialidad, String diagnostico, String nombreMedico)  {
         this.recordMedico = recordMedico;
         this.fechaRegistro = fechaRegistro;
         this.historiaClinica = historiaClinica;
+        this.signosVitales = signosVitales;
+        this.motivoConsulta = motivoConsulta;
+        this.especialidad = especialidad;
+        this.diagnostico = diagnostico;
+        this.nombreMedico = nombreMedico;
     }
-
-
 }

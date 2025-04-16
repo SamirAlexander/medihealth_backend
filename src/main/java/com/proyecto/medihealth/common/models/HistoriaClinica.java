@@ -29,6 +29,17 @@ public class HistoriaClinica {
     @Column(name = "fecha_creacion", nullable = false)
     private String fechaCreacion;
 
+    @Column(name = "contacto_emergencia")
+    private String contactoEmergencia;
+
+    @Column(name = "telefono_emergencia")
+    private int telefonoEmergencia;
+
+    @Column(name = "antecedentes_medicos")
+    private String AntecedentesMedicos;
+
+
+
     @OneToMany(mappedBy = "historiaClinica", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("historiaClinica")
     private List<RecordMedico> recordsMedicos;
@@ -37,8 +48,12 @@ public class HistoriaClinica {
     public HistoriaClinica() {
     }
 
-    public HistoriaClinica(String pacienteId, String fechaCreacion) {
+    public HistoriaClinica(String pacienteId, String fechaCreacion, String contactoEmergencia, int telefonoEmergencia, String antecedentesMedicos) {
         this.pacienteId = pacienteId;
         this.fechaCreacion = fechaCreacion;
+        this.contactoEmergencia = contactoEmergencia;
+        this.telefonoEmergencia = telefonoEmergencia;
+        this.AntecedentesMedicos = antecedentesMedicos;
+
     }
 }

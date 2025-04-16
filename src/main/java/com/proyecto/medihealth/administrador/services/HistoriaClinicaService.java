@@ -45,6 +45,9 @@ public class HistoriaClinicaService {
         HistoriaClinica historiaClinica = new HistoriaClinica();
         historiaClinica.setPacienteId(historiaClinicaDTO.getPacienteId());
         historiaClinica.setFechaCreacion(historiaClinicaDTO.getFechaCreacion());
+        historiaClinica.setContactoEmergencia(historiaClinicaDTO.getContactoEmergencia());
+        historiaClinica.setTelefonoEmergencia(historiaClinicaDTO.getTelefonoEmergencia());
+        historiaClinica.setAntecedentesMedicos(historiaClinicaDTO.getAntecedentesMedicos());
 
         // Generar número de historia si no viene en el DTO
         if(historiaClinicaDTO.getNumeroHistoria() == null) {
@@ -65,6 +68,13 @@ public class HistoriaClinicaService {
                 recordMedico.setRecordMedico(recordDTO.getRecordMedico());
                 recordMedico.setFechaRegistro(recordDTO.getFechaRegistro());
                 recordMedico.setHistoriaClinica(historiaGuardada);
+                recordMedico.setSignosVitales(recordDTO.getSignosVitales());
+                recordMedico.setMotivoConsulta(recordDTO.getMotivoConsulta());
+                recordMedico.setEspecialidad(recordDTO.getEspecialidad());
+                recordMedico.setDiagnostico(recordDTO.getDiagnostico());
+                recordMedico.setNombreMedico(recordDTO.getNombreMedico());
+
+
 
                 recordsMedicos.add(recordMedico);
             }

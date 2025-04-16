@@ -27,6 +27,11 @@ public class RecordMedicoService {
         nuevoRecord.setRecordMedico(recordMedicoDTO.getRecordMedico());
         nuevoRecord.setFechaRegistro(recordMedicoDTO.getFechaRegistro());
         nuevoRecord.setHistoriaClinica(historia);
+        nuevoRecord.setSignosVitales(recordMedicoDTO.getSignosVitales());
+        nuevoRecord.setMotivoConsulta(recordMedicoDTO.getMotivoConsulta());
+        nuevoRecord.setEspecialidad(recordMedicoDTO.getEspecialidad());
+        nuevoRecord.setDiagnostico(recordMedicoDTO.getDiagnostico());
+        nuevoRecord.setNombreMedico(recordMedicoDTO.getNombreMedico());
 
         RecordMedico recordGuardado = recordMedicoRepository.save(nuevoRecord);
 

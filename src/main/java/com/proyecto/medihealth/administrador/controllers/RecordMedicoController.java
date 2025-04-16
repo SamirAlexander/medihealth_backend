@@ -18,7 +18,7 @@ public class RecordMedicoController {
     @Autowired RecordMedicoService recordMedicoService;
 
     // PUT /administrador/record-medicos/{id}
-    // Agregar Record Medico a una historia clínica existente.
+    // Agregar Record Medico a una historia clínica existente por ID (Item).
     @PutMapping("/{id}")
     public ResponseEntity<RecordMedico> updateHistoriaClinica(@PathVariable int id, @Valid @RequestBody RecordMedicoDTO recordMedicoDTO) {
         RecordMedico updatedRecord = recordMedicoService.agregarRecordAHistoria(id, recordMedicoDTO);
@@ -26,7 +26,7 @@ public class RecordMedicoController {
     }
 
     // GET /administrador/record-medicos/{id}
-    // Obtener un record médico por su ID.
+    // Obtener un record médico por numero_historia.
     @GetMapping("/{id}")
     public ResponseEntity<HistoriaClinica> getRecordMedico(@PathVariable long id) {
         HistoriaClinica historiaClinica = recordMedicoService.obtenerHistoriaClinicaPorNumeroHistoria(id);

@@ -18,10 +18,13 @@ public class HistoriaClinicaDTO {
     private Long numeroHistoria;
     private String pacienteId;
     private String fechaCreacion;
+    private String contactoEmergencia;
+    private int telefonoEmergencia;
+    private String antecedentesMedicos;
     private List<RecordMedicoDTO> recordsMedicos;
 
     // Getters y setters
-    public Long getNumeroHistoria() {
+    public Long  getNumeroHistoria() {
         return numeroHistoria;
     }
 
@@ -43,6 +46,28 @@ public class HistoriaClinicaDTO {
 
     public void setFechaCreacion(String fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
+    }
+
+    public int getTelefonoEmergencia() { return telefonoEmergencia; }
+
+    public void setTelefonoEmergencia(int telefonoEmergencia) {
+        this.telefonoEmergencia = telefonoEmergencia;
+    }
+
+    public String getAntecedentesMedicos() {
+        return antecedentesMedicos;
+    }
+
+    public void setAntecedentesMedicos(String antecedentesMedicos) {
+        this.antecedentesMedicos = antecedentesMedicos;
+    }
+
+    public String getContactoEmergencia() {
+        return contactoEmergencia;
+    }
+
+    public void setContactoEmergencia(String contactoEmergencia) {
+        this.contactoEmergencia = contactoEmergencia;
     }
 
     public List<RecordMedicoDTO> getRecordsMedicos() {

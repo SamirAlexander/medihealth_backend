@@ -20,7 +20,7 @@ public class HistoriaClinicaController {
     private HistoriaClinicaService historiaClinicaService;
 
     // GET /administrador/historias-clinicas/{id}
-    // Obtener Historia Clinica
+    // Obtener Historia Clinica POR ITEM
      @GetMapping("/{id}")
     public HistoriaClinica obtenerHistoriaClinicaPorId(@PathVariable("id") int id) {
         return historiaClinicaService.obtenerHistoriaClinicaPorId(id);}
@@ -33,6 +33,7 @@ public class HistoriaClinicaController {
     }
 
     //POST /administrador/historias-clinicas
+    // Crear Historia Clinica por item
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<HistoriaClinica> createHistoriaClinica(@Valid @RequestBody HistoriaClinicaDTO historiaClinicaDTO) {
