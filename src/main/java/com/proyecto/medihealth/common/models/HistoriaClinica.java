@@ -56,4 +56,10 @@ public class HistoriaClinica {
         this.AntecedentesMedicos = antecedentesMedicos;
 
     }
+
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "documentoIdentidad", referencedColumnName = "documentoIdentidad", nullable = false)
+    @JsonIgnoreProperties("historiaClinica")
+    private Paciente paciente;
 }

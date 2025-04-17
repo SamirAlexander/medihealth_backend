@@ -4,8 +4,10 @@ import com.proyecto.medihealth.administrador.dtos.HistoriaClinicaDTO;
 import com.proyecto.medihealth.administrador.dtos.RecordMedicoDTO;
 import com.proyecto.medihealth.administrador.repositories.HistoriaClinicaRepository;
 import com.proyecto.medihealth.administrador.repositories.RecordMedicoRepository;
+import com.proyecto.medihealth.administrador.repositories.UsuarioRepository;
 import com.proyecto.medihealth.common.models.HistoriaClinica;
 import com.proyecto.medihealth.common.models.RecordMedico;
+import com.proyecto.medihealth.common.models.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,8 @@ public class HistoriaClinicaService {
 
     @Autowired
     private HistoriaClinicaRepository historiaClinicaRepository;
+    @Autowired
+    private UsuarioRepository usuarioRepository;
 
     @Autowired
     private RecordMedicoRepository recordMedicoRepository;
@@ -26,9 +30,24 @@ public class HistoriaClinicaService {
         return historiaClinicaRepository.findAll();
     }
 
+    //OBTERNER HISTORIAS CLINICAS SIN RECORD MEDICO
+    public List<HistoriaClinica> obtenerHistoriasClinicasSinRecords() {
+        List<HistoriaClinica> historias = historiaClinicaRepository.findAll();
+        for (HistoriaClinica historia : historias) {
+            historia.setRecordsMedicos(new ArrayList<>());
+        }
+        return historias;
+    }
+
     //OBTERNER HISTORIA CLINICA POR ID DE UN PACIENTE
     public HistoriaClinica obtenerHistoriaClinicaPorId(int id) {
         return historiaClinicaRepository.findById(id).orElse(null);
+    }
+
+    //OBTERNER HISTORIA CLINICA POR DOCUMENTO DE IDENTIDAD
+    public Usuario obtenerHistoriaClinicaPorDocumentoIdentidad(String id) {
+        return usuarioRepository.findByDocumentoIdentidad(id).orElse(null);
+                //historiaClinicaRepository.findByPaciente_Usuario_DocumentoIdentidad(id).orElse(null);
     }
 
     // ELIMINAR HISTORIA CLINICA POR ID DE UN PACIENTE
