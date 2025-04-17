@@ -43,6 +43,10 @@ public class Paciente {
     @Column(name = "proximaCita")
     private Date proximaCita;
 
+    @OneToOne(mappedBy = "paciente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnoreProperties("paciente")
+    private HistoriaClinica historiaClinica;
+
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "documentoIdentidad", referencedColumnName = "documentoIdentidad", nullable = false)
     @JsonIgnoreProperties("paciente")

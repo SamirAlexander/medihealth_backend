@@ -44,7 +44,7 @@ public class HistoriaClinicaController {
     // GET /administrador/historias-clinicas/documento/{id}
     // Obtener Historia Clinica por numero documento
     @GetMapping("/documento/{id}")
-    public Usuario obtenerHistoriaClinicaPorDocumentoIdentidad(String id) {
+    public Usuario obtenerHistoriaClinicaPorDocumentoIdentidad(@PathVariable String id) {
         return historiaClinicaService.obtenerHistoriaClinicaPorDocumentoIdentidad(id);
     }
 
