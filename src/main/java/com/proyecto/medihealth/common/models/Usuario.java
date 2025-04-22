@@ -51,4 +51,21 @@ public class Usuario {
     private Medico medico;
 
 
+    // METOD PARA LEER EL CONTENIDO DE LA DIRECCION DE MEMORIA Y NO LA DIRECCION DE MEMORIA POR CONSOLA
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "idUsuario=" + idUsuario +
+                ", documentoIdentidad='" + documentoIdentidad + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", correo='" + correo + '\'' +
+                ", contrasena='" + contrasena + '\'' +
+                ", rol='" + rol + '\'' +
+                '}';
+    }
+
+
+
 }

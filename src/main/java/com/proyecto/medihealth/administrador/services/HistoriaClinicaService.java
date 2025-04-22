@@ -4,8 +4,10 @@ import com.proyecto.medihealth.administrador.dtos.HistoriaClinicaDTO;
 import com.proyecto.medihealth.administrador.dtos.RecordMedicoDTO;
 import com.proyecto.medihealth.administrador.repositories.HistoriaClinicaRepository;
 import com.proyecto.medihealth.administrador.repositories.RecordMedicoRepository;
+import com.proyecto.medihealth.administrador.repositories.UsuarioRepository;
 import com.proyecto.medihealth.common.models.HistoriaClinica;
 import com.proyecto.medihealth.common.models.RecordMedico;
+import com.proyecto.medihealth.common.models.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,8 @@ public class HistoriaClinicaService {
 
     @Autowired
     private HistoriaClinicaRepository historiaClinicaRepository;
+    @Autowired
+    private UsuarioRepository usuarioRepository;
 
     @Autowired
     private RecordMedicoRepository recordMedicoRepository;
@@ -26,9 +30,28 @@ public class HistoriaClinicaService {
         return historiaClinicaRepository.findAll();
     }
 
+    //OBTERNER HISTORIAS CLINICAS SIN RECORD MEDICO
+    public List<HistoriaClinica> obtenerHistoriasClinicasSinRecords() {
+        List<HistoriaClinica> historias = historiaClinicaRepository.findAll();
+        for (HistoriaClinica historia : historias) {
+            historia.setRecordsMedicos(new ArrayList<>());
+        }
+        return historias;
+    }
+
     //OBTERNER HISTORIA CLINICA POR ID DE UN PACIENTE
     public HistoriaClinica obtenerHistoriaClinicaPorId(int id) {
         return historiaClinicaRepository.findById(id).orElse(null);
+    }
+
+    //OBTERNER HISTORIA CLINICA POR DOCUMENTO DE IDENTIDAD
+    public Usuario obtenerHistoriaClinicaPorDocumentoIdentidad(String id) {
+        try {
+            return usuarioRepository.findByDocumentoIdentidadAndRol(id, "Paciente")
+                    .orElseThrow(() -> new RuntimeException("Documento no encontrado para Paciente: " + id));
+        } catch (Exception e) {
+            throw new RuntimeException("El documento no corresponde a Paciente: " + e.getMessage());
+        }
     }
 
     // ELIMINAR HISTORIA CLINICA POR ID DE UN PACIENTE
@@ -50,7 +73,7 @@ public class HistoriaClinicaService {
         historiaClinica.setAntecedentesMedicos(historiaClinicaDTO.getAntecedentesMedicos());
 
         // Generar número de historia si no viene en el DTO
-        if(historiaClinicaDTO.getNumeroHistoria() == null) {
+        if (historiaClinicaDTO.getNumeroHistoria() == null) {
             historiaClinica.setNumeroHistoria(generarNumeroHistoria());
         } else {
             historiaClinica.setNumeroHistoria(historiaClinicaDTO.getNumeroHistoria());
@@ -60,10 +83,10 @@ public class HistoriaClinicaService {
         HistoriaClinica historiaGuardada = historiaClinicaRepository.save(historiaClinica);
 
         // Guardar los records médicos asociados
-        if(historiaClinicaDTO.getRecordsMedicos() != null && !historiaClinicaDTO.getRecordsMedicos().isEmpty()) {
+        if (historiaClinicaDTO.getRecordsMedicos() != null && !historiaClinicaDTO.getRecordsMedicos().isEmpty()) {
             List<RecordMedico> recordsMedicos = new ArrayList<>();
 
-            for(RecordMedicoDTO recordDTO : historiaClinicaDTO.getRecordsMedicos()) {
+            for (RecordMedicoDTO recordDTO : historiaClinicaDTO.getRecordsMedicos()) {
                 RecordMedico recordMedico = new RecordMedico();
                 recordMedico.setRecordMedico(recordDTO.getRecordMedico());
                 recordMedico.setFechaRegistro(recordDTO.getFechaRegistro());
@@ -73,7 +96,6 @@ public class HistoriaClinicaService {
                 recordMedico.setEspecialidad(recordDTO.getEspecialidad());
                 recordMedico.setDiagnostico(recordDTO.getDiagnostico());
                 recordMedico.setNombreMedico(recordDTO.getNombreMedico());
-
 
 
                 recordsMedicos.add(recordMedico);
