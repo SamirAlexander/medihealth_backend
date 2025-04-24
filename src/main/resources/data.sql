@@ -191,6 +191,50 @@ VALUES
 ('Consejería para dejar de fumar', 'Medicina General', '2025-04-18', 'Tabaquismo', 'Dr. Villalobos', 'Paciente motivado, se agenda seguimiento', 'TA: 115/75, FC: 72', 17);
 
 
+INSERT INTO agendas (estado_dia, fecha_cita) VALUES
+('día hábil', '2025-04-21'),
+('día hábil', '2025-04-22'),
+('día hábil', '2025-04-23'),
+('día hábil', '2025-04-24'),
+('día hábil', '2025-04-25'),
+('sábado', '2025-04-26'),
+('domingo', '2025-04-27'),
+('día hábil', '2025-04-28'),
+('festivo', '2025-05-01'),
+('día hábil', '2025-05-02'),
+('sábado', '2025-05-03'),
+('domingo', '2025-05-04'),
+('día hábil', '2025-05-05'),
+('día hábil', '2025-05-06'),
+('festivo', '2025-05-07'),
+('día hábil', '2025-05-08'),
+('sábado', '2025-05-10'),
+('domingo', '2025-05-11'),
+('día hábil', '2025-05-12'),
+('festivo', '2025-05-20');
+
+INSERT INTO detalle_agenda (consultorio, especialidad, hora_inicio, hora_fin, medico, id_agenda) VALUES
+('Consultorio 1', 'Medicina General', '08:00:00', '10:00:00', 'Dr. Pérez', 1),
+('Consultorio 2', 'Pediatría', '10:00:00', '12:00:00', 'Dra. García', 2),
+('Consultorio 1', 'Cardiología', '14:00:00', '16:00:00', 'Dr. Gómez', 1),
+('Consultorio 3', 'Dermatología', '09:00:00', '11:00:00', 'Dra. Martínez', 3),
+('Consultorio 2', 'Medicina General', '08:00:00', '10:00:00', 'Dr. Ríos', 2),
+('Consultorio 1', 'Pediatría', '10:00:00', '12:00:00', 'Dra. Sánchez', 1),
+('Consultorio 3', 'Medicina Interna', '14:00:00', '16:00:00', 'Dr. Herrera', 3),
+('Consultorio 2', 'Ginecología', '08:00:00', '10:00:00', 'Dra. Vargas', 2),
+('Consultorio 1', 'Medicina General', '10:00:00', '12:00:00', 'Dr. Salazar', 1),
+('Consultorio 3', 'Pediatría', '14:00:00', '16:00:00', 'Dra. Cárdenas', 3),
+('Consultorio 2', 'Neurología', '08:00:00', '10:00:00', 'Dr. Medina', 2),
+('Consultorio 1', 'Medicina Interna', '10:00:00', '12:00:00', 'Dra. López', 1),
+('Consultorio 3', 'Cardiología', '14:00:00', '16:00:00', 'Dr. Torres', 3),
+('Consultorio 1', 'Dermatología', '08:00:00', '10:00:00', 'Dra. Núñez', 1),
+('Consultorio 2', 'Pediatría', '10:00:00', '12:00:00', 'Dr. Campos', 2),
+('Consultorio 3', 'Medicina General', '14:00:00', '16:00:00', 'Dra. Romero', 3),
+('Consultorio 1', 'Ginecología', '08:00:00', '10:00:00', 'Dra. Díaz', 1),
+('Consultorio 2', 'Cardiología', '10:00:00', '12:00:00', 'Dr. Molina', 2),
+('Consultorio 3', 'Neurología', '14:00:00', '16:00:00', 'Dra. Castro', 3),
+('Consultorio 1', 'Medicina General', '08:00:00', '10:00:00', 'Dr. Vega', 1);
+
 
 
 
