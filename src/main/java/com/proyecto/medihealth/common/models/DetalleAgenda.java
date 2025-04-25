@@ -34,6 +34,10 @@ public class DetalleAgenda {
     @Column(name = "especialidad", nullable = false)
     private String especialidad;
 
+    @Column(name = "disponibilidad", nullable = false)
+    private String disponibilidad;
+
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idAgenda", nullable = false, referencedColumnName = "idAgenda")
     @JsonIgnoreProperties("idAgenda")
