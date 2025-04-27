@@ -21,8 +21,8 @@ public class MedicoService {
         medico.setDependencia(medicoDTO.getDependencia());
         medico.setHorarioTrabajo(medicoDTO.getHorarioTrabajo());
         medico.setNumeroLicencia(medicoDTO.getNumeroLicencia());
-        medico.setAreaEspecializacion(medicoDTO.getAreaEspecializacion());
-        medico.setNoConsultorio(medicoDTO.getNoConsultorio());
+        medico.setEspecialidad(medicoDTO.getEspecialidad());
+
         
         return medicoRepository.save(medico);
     }
@@ -48,8 +48,7 @@ public class MedicoService {
             medico.setDependencia(medicoDTO.getDependencia());
             medico.setHorarioTrabajo(medicoDTO.getHorarioTrabajo());
             medico.setNumeroLicencia(medicoDTO.getNumeroLicencia());
-            medico.setAreaEspecializacion(medicoDTO.getAreaEspecializacion());
-            medico.setNoConsultorio(medicoDTO.getNoConsultorio());
+            medico.setEspecialidad(medicoDTO.getEspecialidad());
             
             return medicoRepository.save(medico);
         }

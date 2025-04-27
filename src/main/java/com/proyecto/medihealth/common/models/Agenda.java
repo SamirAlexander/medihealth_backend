@@ -32,6 +32,4 @@ public class Agenda {
     @JsonIgnoreProperties("agendas")
     private List<DetalleAgenda> detalleAgenda;
 
-
-
 }

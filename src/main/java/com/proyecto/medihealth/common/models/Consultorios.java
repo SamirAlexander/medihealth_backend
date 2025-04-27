@@ -17,12 +17,15 @@ public class Consultorios {
     @Column(name = "idConsultorio", nullable = false)
     private int idConsultorio;
 
-    @Column(name = "nombreConsultorio", nullable = false)
+    @Column(name = "numeroConsultorio", nullable = false)
     private String numeroConsultorio;
 
-    @OneToMany (mappedBy = "consultorios")
+    @OneToOne (fetch = FetchType.LAZY)
     @JoinColumn(name = "id_medico", nullable = false)
     @JsonIgnoreProperties("idMedico")
     private Medico medico;
+
+
+
 
 }

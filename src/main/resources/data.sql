@@ -113,54 +113,65 @@ INSERT INTO administradores (
 
 
 INSERT INTO medicos (
-    area_especializacion, dependencia, horario_trabajo, no_consultorio, numero_licencia, documento_identidad
+    especialidad, dependencia, horario_trabajo, numero_licencia, documento_identidad
 ) VALUES
-('Cardiología', 'Hospital Central', '08:00-16:00', 101, 'LIC-001', '444000111'),
-('Pediatría', 'Clínica Santa Rosa', '09:00-17:00', 102, 'LIC-002', '444000222'),
-('Dermatología', 'Centro Médico Norte', '10:00-18:00', 103, 'LIC-003', '444000333'),
-('Neurología', 'Hospital Universitario', '07:30-15:30', 104, 'LIC-004', '444000444'),
-('Oftalmología', 'Clínica de la Vista', '08:00-14:00', 105, 'LIC-005', '444000555'),
-('Psiquiatría', 'Instituto de Salud Mental', '11:00-19:00', 106, 'LIC-006', '444000666'),
-('Ginecología', 'Hospital de la Mujer', '08:30-16:30', 107, 'LIC-007', '444000777'),
-('Traumatología', 'Clínica Ortopédica', '12:00-20:00', 108, 'LIC-008', '444000888'),
-('Urología', 'Hospital General', '09:00-17:00', 109, 'LIC-009', '444000999'),
-('Oncología', 'Instituto Oncológico', '08:00-16:00', 110, 'LIC-010', '555000111'),
-('Endocrinología', 'Centro Metabólico', '07:00-15:00', 111, 'LIC-011', '555000222'),
-('Reumatología', 'Clínica Especializada Norte', '10:00-18:00', 112, 'LIC-012', '555000333'),
-('Neumología', 'Clínica RespiraBien', '09:30-17:30', 113, 'LIC-013', '555000444'),
-('Gastroenterología', 'Hospital Central', '08:00-14:00', 114, 'LIC-014', '555000555'),
-('Medicina Interna', 'Clínica San Rafael', '11:00-19:00', 115, 'LIC-015', '555000666'),
-('Otorrinolaringología', 'Centro Auditivo Integral', '07:00-13:00', 116, 'LIC-016', '555000777'),
-('Nefrología', 'Hospital Renal', '10:00-18:00', 117, 'LIC-017', '555000888'),
-('Cirugía General', 'Hospital Universitario', '06:00-14:00', 118, 'LIC-018', '555000999'),
-('Infectología', 'Clínica de Enfermedades Infecciosas', '09:00-17:00', 119, 'LIC-019', '666000111'),
-('Radiología', 'Centro de Imagenología', '08:00-16:00', 120, 'LIC-020', '666000222');
+('Cardiología', 'Hospital Central', '08:00-16:00', 'LIC-001', '444000111'),
+('Pediatría', 'Clínica Santa Rosa', '09:00-17:00', 'LIC-002', '444000222'),
+('Dermatología', 'Centro Médico Norte', '10:00-18:00', 'LIC-003', '444000333'),
+('Neurología', 'Hospital Universitario', '07:30-15:30', 'LIC-004', '444000444'),
+('Oftalmología', 'Clínica de la Vista', '08:00-14:00', 'LIC-005', '444000555'),
+('Psiquiatría', 'Instituto de Salud Mental', '11:00-19:00', 'LIC-006', '444000666'),
+('Ginecología', 'Hospital de la Mujer', '08:30-16:30', 'LIC-007', '444000777'),
+('Traumatología', 'Clínica Ortopédica', '12:00-20:00', 'LIC-008', '444000888'),
+('Urología', 'Hospital General', '09:00-17:00', 'LIC-009', '444000999'),
+('Oncología', 'Instituto Oncológico', '08:00-16:00', 'LIC-010', '555000111'),
+('Endocrinología', 'Centro Metabólico', '07:00-15:00', 'LIC-011', '555000222'),
+('Reumatología', 'Clínica Especializada Norte', '10:00-18:00', 'LIC-012', '555000333'),
+('Neumología', 'Clínica RespiraBien', '09:30-17:30', 'LIC-013', '555000444'),
+('Gastroenterología', 'Hospital Central', '08:00-14:00', 'LIC-014', '555000555'),
+('Medicina Interna', 'Clínica San Rafael', '11:00-19:00', 'LIC-015', '555000666'),
+('Otorrinolaringología', 'Centro Auditivo Integral', '07:00-13:00', 'LIC-016', '555000777'),
+('Nefrología', 'Hospital Renal', '10:00-18:00', 'LIC-017', '555000888'),
+('Cirugía General', 'Hospital Universitario', '06:00-14:00', 'LIC-018', '555000999'),
+('Infectología', 'Clínica de Enfermedades Infecciosas', '09:00-17:00', 'LIC-019', '666000111'),
+('Radiología', 'Centro de Imagenología', '08:00-16:00', 'LIC-020', '666000222');
 
+INSERT INTO consultorios (numero_consultorio, id_medico) VALUES
+('C-101', 1),
+('C-102', 2),
+('C-103', 3),
+('C-104', 4),
+('C-105', 5),
+('C-106', 6),
+('C-107', 7),
+('C-108', 8),
+('C-109', 9),
+('C-110', 10);
 
 -- Insertar en historia_clinica
 INSERT INTO historia_clinica
-(antecedentes_medicos, contacto_emergencia, fecha_creacion, numero_historia, paciente_id, telefono_emergencia,documento_identidad)
+(antecedentes_medicos, contacto_emergencia, fecha_creacion, numero_historia, paciente_id, telefono_emergencia, id_paciente)
 VALUES
-('Diabetes tipo 2', 'Laura Pérez', '2025-04-01', 1001, 201, '5551234', 123456789),
-('Hipertensión', 'Carlos Gómez', '2025-04-03', 1002, 202, '5555678', 987654321),
-('Asma', 'María López', '2025-04-04', 1003, 203, '5559012', 112233445),
-('Alergia a penicilina', 'Ana Torres', '2025-04-05', 1004, 204, '5551111', 223344556),
-('Enfermedad celíaca', 'Luis Martínez', '2025-04-05', 1005, 205, '5552222', 334455667),
-('Migrañas crónicas', 'Esteban Ríos', '2025-04-06', 1006, 206, '5553333', 445566778),
-('Insuficiencia renal', 'Marta Sánchez', '2025-04-06', 1007, 207, '5554444', 556677889),
-('Artritis reumatoide', 'Tomás Díaz', '2025-04-07', 1008, 208, '5555555', 667788990),
-('Hipotiroidismo', 'Natalia Vega', '2025-04-07', 1009, 209, '5556666', 778899001),
-('Epilepsia', 'Ricardo Ruiz', '2025-04-08', 1010, 210, '5557777', 889900112),
-('Depresión', 'Daniela Mora', '2025-04-08', 1011, 211, '5558888', 990011223),
-('Colesterol alto', 'Iván Castro', '2025-04-09', 1012, 212, '5559999', 101010101),
-('Lupus', 'Claudia León', '2025-04-09', 1013, 213, '5550001', 202020202),
-('Asma', 'Silvia Torres', '2025-04-10', 1014, 214, '5550002', 303030303),
-('Obesidad', 'Jorge Méndez', '2025-04-10', 1015, 215, '5550003', 404040404),
-('Enfermedad de Crohn', 'Patricia Gil', '2025-04-11', 1016, 216, '5550004', 505050505),
-('Esclerosis múltiple', 'Héctor Bravo', '2025-04-11', 1017, 217, '5550005', 606060606),
-('Fibromialgia', 'Lucía Paredes', '2025-04-12', 1018, 218, '5550006', 707070707),
-('Glaucoma', 'Manuel Vela', '2025-04-12', 1019, 219, '5550007', 808080808),
-('Tabaquismo', 'Sofía Navarro', '2025-04-13', 1020, 220, '5550008', 909090909);
+('Diabetes tipo 2', 'Laura Pérez', '2025-04-01', 1001, 201, '5551234', 1),
+('Hipertensión', 'Carlos Gómez', '2025-04-03', 1002, 202, '5555678', 2),
+('Asma', 'María López', '2025-04-04', 1003, 203, '5559012', 3),
+('Alergia a penicilina', 'Ana Torres', '2025-04-05', 1004, 204, '5551111', 4),
+('Enfermedad celíaca', 'Luis Martínez', '2025-04-05', 1005, 205, '5552222', 5),
+('Migrañas crónicas', 'Esteban Ríos', '2025-04-06', 1006, 206, '5553333', 6),
+('Insuficiencia renal', 'Marta Sánchez', '2025-04-06', 1007, 207, '5554444', 7),
+('Artritis reumatoide', 'Tomás Díaz', '2025-04-07', 1008, 208, '5555555', 8),
+('Hipotiroidismo', 'Natalia Vega', '2025-04-07', 1009, 209, '5556666', 9),
+('Epilepsia', 'Ricardo Ruiz', '2025-04-08', 1010, 210, '5557777', 10),
+('Depresión', 'Daniela Mora', '2025-04-08', 1011, 211, '5558888', 11),
+('Colesterol alto', 'Iván Castro', '2025-04-09', 1012, 212, '5559999', 12),
+('Lupus', 'Claudia León', '2025-04-09', 1013, 213, '5550001', 13),
+('Asma', 'Silvia Torres', '2025-04-10', 1014, 214, '5550002', 14),
+('Obesidad', 'Jorge Méndez', '2025-04-10', 1015, 215, '5550003', 15),
+('Enfermedad de Crohn', 'Patricia Gil', '2025-04-11', 1016, 216, '5550004', 16),
+('Esclerosis múltiple', 'Héctor Bravo', '2025-04-11', 1017, 217, '5550005', 17),
+('Fibromialgia', 'Lucía Paredes', '2025-04-12', 1018, 218, '5550006', 18),
+('Glaucoma', 'Manuel Vela', '2025-04-12', 1019, 219, '5550007', 19),
+('Tabaquismo', 'Sofía Navarro', '2025-04-13', 1020, 220, '5550008', 20);
 
 
 -- Insertar en registro_clinico (1 o 2 registros por historia)
@@ -213,27 +224,29 @@ INSERT INTO agendas (estado_dia, fecha_cita) VALUES
 ('día hábil', '2025-05-12'),
 ('festivo', '2025-05-20');
 
-INSERT INTO detalle_agenda (consultorio, especialidad, hora_inicio, hora_fin, medico, id_agenda) VALUES
-('Consultorio 1', 'Medicina General', '08:00:00', '10:00:00', 'Dr. Pérez', 1),
-('Consultorio 2', 'Pediatría', '10:00:00', '12:00:00', 'Dra. García', 2),
-('Consultorio 1', 'Cardiología', '14:00:00', '16:00:00', 'Dr. Gómez', 1),
-('Consultorio 3', 'Dermatología', '09:00:00', '11:00:00', 'Dra. Martínez', 3),
-('Consultorio 2', 'Medicina General', '08:00:00', '10:00:00', 'Dr. Ríos', 2),
-('Consultorio 1', 'Pediatría', '10:00:00', '12:00:00', 'Dra. Sánchez', 1),
-('Consultorio 3', 'Medicina Interna', '14:00:00', '16:00:00', 'Dr. Herrera', 3),
-('Consultorio 2', 'Ginecología', '08:00:00', '10:00:00', 'Dra. Vargas', 2),
-('Consultorio 1', 'Medicina General', '10:00:00', '12:00:00', 'Dr. Salazar', 1),
-('Consultorio 3', 'Pediatría', '14:00:00', '16:00:00', 'Dra. Cárdenas', 3),
-('Consultorio 2', 'Neurología', '08:00:00', '10:00:00', 'Dr. Medina', 2),
-('Consultorio 1', 'Medicina Interna', '10:00:00', '12:00:00', 'Dra. López', 1),
-('Consultorio 3', 'Cardiología', '14:00:00', '16:00:00', 'Dr. Torres', 3),
-('Consultorio 1', 'Dermatología', '08:00:00', '10:00:00', 'Dra. Núñez', 1),
-('Consultorio 2', 'Pediatría', '10:00:00', '12:00:00', 'Dr. Campos', 2),
-('Consultorio 3', 'Medicina General', '14:00:00', '16:00:00', 'Dra. Romero', 3),
-('Consultorio 1', 'Ginecología', '08:00:00', '10:00:00', 'Dra. Díaz', 1),
-('Consultorio 2', 'Cardiología', '10:00:00', '12:00:00', 'Dr. Molina', 2),
-('Consultorio 3', 'Neurología', '14:00:00', '16:00:00', 'Dra. Castro', 3),
-('Consultorio 1', 'Medicina General', '08:00:00', '10:00:00', 'Dr. Vega', 1);
+
+INSERT INTO detalle_agenda (disponibilidad, hora_fin, hora_inicio, id_agenda, id_consultorio, id_paciente) VALUES
+('Disponible', '08:30:00', '08:00:00', 1, 1, 1),
+('Ocupado', '09:00:00', '08:30:00', 1, 2, 2),
+('Disponible', '09:30:00', '09:00:00', 1, 3, 3),
+('Ocupado', '10:00:00', '09:30:00', 2, 1, 4),
+('Disponible', '10:30:00', '10:00:00', 2, 2, 5),
+('Ocupado', '11:00:00', '10:30:00', 2, 3, 6),
+('Disponible', '11:30:00', '11:00:00', 3, 1, 7),
+('Ocupado', '12:00:00', '11:30:00', 3, 2, 8),
+('Disponible', '12:30:00', '12:00:00', 3, 3, 9),
+('Ocupado', '13:00:00', '12:30:00', 4, 1, 10),
+('Disponible', '13:30:00', '13:00:00', 4, 2, 11),
+('Ocupado', '14:00:00', '13:30:00', 4, 3, 12),
+('Disponible', '14:30:00', '14:00:00', 5, 1, 13),
+('Ocupado', '15:00:00', '14:30:00', 5, 2, 14),
+('Disponible', '15:30:00', '15:00:00', 5, 3, 15),
+('Ocupado', '16:00:00', '15:30:00', 6, 1, 16),
+('Disponible', '16:30:00', '16:00:00', 6, 2, 17),
+('Ocupado', '17:00:00', '16:30:00', 6, 3, 18),
+('Disponible', '17:30:00', '17:00:00', 7, 1, 19),
+('Ocupado', '18:00:00', '17:30:00', 7, 2, 20);
+
 
 
 

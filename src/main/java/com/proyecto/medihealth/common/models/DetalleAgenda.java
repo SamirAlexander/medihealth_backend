@@ -25,9 +25,6 @@ public class DetalleAgenda {
     @Column(name = "horaFin", nullable = false)
     private Time horaFin;
 
-    @Column(name = "especialidad", nullable = false)
-    private String especialidad;
-
     @Column(name = "disponibilidad", nullable = false)
     private String disponibilidad;
 
@@ -38,9 +35,14 @@ public class DetalleAgenda {
     private Agenda agendas;
 
 
-    @OneToOne(mappedBy = "consultorios")
-    @JoinColumn(name = "id_consultorio", referencedColumnName = "id_consultorio", nullable = false)
-    @JsonIgnoreProperties("consultorios")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idConsultorio", referencedColumnName = "idConsultorio", nullable = false)
+    @JsonIgnoreProperties("consultorio")
     private Consultorios consultorios;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idPaciente", referencedColumnName = "idPaciente", nullable = false)
+    @JsonIgnoreProperties("paciente")
+    private Paciente paciente;
 
 }

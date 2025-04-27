@@ -44,6 +44,14 @@ public class HistoriaClinica {
     @JsonIgnoreProperties("historiaClinica")
     private List<RecordMedico> recordsMedicos;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idPaciente", referencedColumnName = "idPaciente", nullable = false)
+    @JsonIgnoreProperties("historiaClinica")
+    private Paciente paciente;
+
+
+
+
     // Constructores, getters y setters
     public HistoriaClinica() {
     }
@@ -56,10 +64,4 @@ public class HistoriaClinica {
         this.AntecedentesMedicos = antecedentesMedicos;
 
     }
-
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "documentoIdentidad", referencedColumnName = "documentoIdentidad", nullable = false)
-    @JsonIgnoreProperties("historiaClinica")
-    private Paciente paciente;
 }

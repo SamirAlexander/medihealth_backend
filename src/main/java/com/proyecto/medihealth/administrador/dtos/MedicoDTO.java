@@ -26,10 +26,9 @@ public class MedicoDTO {
     private String numeroLicencia;
 
     @NotBlank(message = "El área de especialización es obligatoria")
-    private String areaEspecializacion;
+    private String especialidad;
 
-    @NotBlank(message = "El número de consultorio no puede estar vacío")
-    private String noConsultorio;
+
 
     // Getters y Setters
 }

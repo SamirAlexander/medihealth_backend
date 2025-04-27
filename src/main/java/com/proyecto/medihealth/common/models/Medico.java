@@ -25,16 +25,15 @@ public class Medico {
     @Column(name = "numeroLicencia", nullable = true, length = 20)
     private String numeroLicencia;
 
-    @Column(name = "areaEspecializacion", nullable = true, length = 100)
-    private String areaEspecializacion;
+    @Column(name = "especialidad", nullable = true, length = 100)
+    private String especialidad;
 
-    @Column(name = "noConsultorio", nullable = true, length = 20)
-    private String noConsultorio;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "documentoIdentidad", referencedColumnName = "documentoIdentidad", nullable = false)
     @JsonIgnoreProperties("medico")
     private Usuario usuario;
+
     }
 
 

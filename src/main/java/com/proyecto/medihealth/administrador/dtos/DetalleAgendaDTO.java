@@ -12,7 +12,6 @@ public class DetalleAgendaDTO {
     private Time horaInicio;
     private Time horaFin;
     private String consultorio;
-    private String especialidad;
 
     public Time getHoraInicio() {
         return horaInicio;
@@ -46,12 +45,4 @@ public class DetalleAgendaDTO {
         this.consultorio = consultorio;
     }
 
-
-    public String getEspecialidad() {
-        return especialidad;
-    }
-
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
-    }
 }
