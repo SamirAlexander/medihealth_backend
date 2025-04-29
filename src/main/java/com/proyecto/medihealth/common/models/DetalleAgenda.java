@@ -41,7 +41,7 @@ public class DetalleAgenda {
     private Consultorios consultorios;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idPaciente", referencedColumnName = "idPaciente", nullable = false)
+    @JoinColumn(name = "idPaciente", referencedColumnName = "idPaciente")
     @JsonIgnoreProperties("paciente")
     private Paciente paciente;
 
