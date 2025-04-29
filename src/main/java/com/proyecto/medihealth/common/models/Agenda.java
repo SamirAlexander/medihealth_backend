@@ -9,8 +9,7 @@ import lombok.Setter;
 import java.util.Date;
 import java.util.List;
 
-//JPA es la tecnología de persistencia de Java que permite mapear objetos Java a tablas de bases de datos relacionales.
-//
+
 @Entity
 @Table(name = "agendas")
 @Getter
@@ -31,5 +30,7 @@ public class Agenda {
     @OneToMany(mappedBy = "agendas", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("agendas")
     private List<DetalleAgenda> detalleAgenda;
+
+
 
 }

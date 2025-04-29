@@ -13,27 +13,4 @@ public class AgendaDTO {
     private Date fechaCita;
     private String estadoDia;
 
-    public int getIdAgenda() {
-        return idAgenda;
-    }
-
-    public void setIdAgenda(int idAgenda) {
-        this.idAgenda = idAgenda;
-    }
-
-    public Date getFechaCita() {
-        return fechaCita;
-    }
-
-    public void setFechaCita(Date fechaCita) {
-        this.fechaCita = fechaCita;
-    }
-
-    public String getEstadoDia() {
-        return estadoDia;
-    }
-
-    public void setEstadoDia(String estadoDia) {
-        this.estadoDia = estadoDia;
-    }
 }
