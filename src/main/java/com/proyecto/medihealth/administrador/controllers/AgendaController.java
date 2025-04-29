@@ -3,6 +3,7 @@ package com.proyecto.medihealth.administrador.controllers;
 
 import com.proyecto.medihealth.administrador.dtos.AgendaDTO;
 import com.proyecto.medihealth.administrador.services.AgendaService;
+import com.proyecto.medihealth.common.models.Agenda;
 import com.proyecto.medihealth.common.models.DetalleAgenda;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,16 +21,11 @@ public class AgendaController {
     // GET /administrador/agenda
     // Listar Agendas
      @GetMapping
-    public List<AgendaDTO> obtenerAgendas() {
+    public List<Agenda> obtenerAgendas() {
          return agendaService.obtenerAgendas();
     }
 
-  // GET /administrador/agenda/detalleAgenda
-    // Listar Detalle Agendas
-     @GetMapping("/detalleAgenda")
-    public List<DetalleAgenda> obtenerDetalleAgendas() {
-         return agendaService.obtenerDetalleAgendas();
-    }
+
 
 
 
