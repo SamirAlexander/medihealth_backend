@@ -11,38 +11,7 @@ public class DetalleAgendaDTO {
     private int idDetalleAgenda;
     private Time horaInicio;
     private Time horaFin;
-    private String consultorio;
+    private String disponibilidad;
 
-    public Time getHoraInicio() {
-        return horaInicio;
-    }
-
-    public void setHoraInicio(Time horaInicio) {
-        this.horaInicio = horaInicio;
-    }
-
-    public int getIdDetalleAgenda() {
-        return idDetalleAgenda;
-    }
-
-    public void setIdDetalleAgenda(int idDetalleAgenda) {
-        this.idDetalleAgenda = idDetalleAgenda;
-    }
-
-    public Time getHoraFin() {
-        return horaFin;
-    }
-
-    public void setHoraFin(Time horaFin) {
-        this.horaFin = horaFin;
-    }
-
-    public String getConsultorio() {
-        return consultorio;
-    }
-
-    public void setConsultorio(String consultorio) {
-        this.consultorio = consultorio;
-    }
 
 }

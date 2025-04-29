@@ -29,15 +29,19 @@ public class UsuarioService {
 
         return usuarioRepository.save(usuario);
     }
+
     // GET /Obtener usuario por ID
     public Usuario obtenerUsuarioPorId(int id) {
         java.util.Optional<Usuario> usuario = usuarioRepository.findById(id);
         return usuario.orElse(null);
     }
+
+
     // GET /Obtener todos los usuarios
     public List<Usuario> obtenerTodosUsuarios() {
         return usuarioRepository.findAll();
     }
+
     // PUT /Actualizar un usuario
     public Usuario actualizarUsuario(int id, UsuarioDTO usuarioDTO) {
         java.util.Optional<Usuario> usuarioExistente = usuarioRepository.findById(id);
