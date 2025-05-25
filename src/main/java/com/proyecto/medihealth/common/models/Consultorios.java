@@ -25,7 +25,4 @@ public class Consultorios {
     @JsonIgnoreProperties("idMedico")
     private Medico medico;
 
-
-
-
 }

@@ -30,7 +30,4 @@ public class Agenda {
     @OneToMany(mappedBy = "agendas", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("agendas")
     private List<DetalleAgenda> detalleAgenda;
-
-
-
 }
