@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000/")
 @RestController
 @RequestMapping("/medico/agendaDelDia")
 public class AgendaDelDiaController {
@@ -23,6 +24,7 @@ public class AgendaDelDiaController {
 
     //Get agenda del dia por consultorio y fecha
     // Get /medico/{idConsultorio}
+    // GET medico/agendaDelDia/1?fecha={}
     @GetMapping("/{idConsultorio}")
     public ResponseEntity<List<AgendaDelDiaDTO>> getAgendaDelDia(
             @PathVariable Integer idConsultorio,
