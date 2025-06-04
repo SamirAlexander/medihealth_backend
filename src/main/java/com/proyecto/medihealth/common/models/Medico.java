@@ -34,7 +34,8 @@ public class Medico {
     @JsonIgnoreProperties("medico")
     private Usuario usuario;
 
-    }
+
+}
 
 
 
