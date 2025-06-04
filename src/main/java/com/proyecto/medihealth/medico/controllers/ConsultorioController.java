@@ -20,7 +20,7 @@ public class ConsultorioController {
     // GET /medico/consultorio/
     // Obtener Datos Personales
     @GetMapping("/")
-    public List<Consultorios> obtenerTodosConsultorios() {
+    public List<ConsultorioDTO> obtenerTodosConsultorios() {
         return consultorioService.obtenerTodosLosConsultorios();
     }
 
