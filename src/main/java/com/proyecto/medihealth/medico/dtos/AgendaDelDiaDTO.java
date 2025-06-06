@@ -49,6 +49,15 @@ public class AgendaDelDiaDTO {
     private Date ultimaCita;
     private Date proximaCita;
 
+    //Datos de Historia Clinica
+    private Long numeroHistoria;
+    private Integer idHistoriaClinica;
+    private String fechaCreacionHistoria;
+    private String contactoEmergencia;
+    private Integer telefonoEmergencia;
+    private String antecedentesMedicos;
+
+
     // Constructor vacío
     public AgendaDelDiaDTO() {
     }
@@ -65,7 +74,9 @@ public class AgendaDelDiaDTO {
                            String pacienteDocumentoIdentidad, String pacienteNombre,
                            String pacienteApellido, String historialMedico,
                            String numeroSeguro, Date fechaNacimiento, Character sexo,
-                           String direccion, Date ultimaCita, Date proximaCita) {
+                           String direccion, Date ultimaCita, Date proximaCita, Long numeroHistoria,
+                           Integer idHistoriaClinica,  String fechaCreacionHistoria,
+                           String contactoEmergencia, Integer telefonoEmergencia,String antecedentesMedicos) {
         this.idAgenda = idAgenda;
         this.fechaCita = fechaCita;
         this.estadoDia = estadoDia;
@@ -94,6 +105,12 @@ public class AgendaDelDiaDTO {
         this.direccion = direccion;
         this.ultimaCita = ultimaCita;
         this.proximaCita = proximaCita;
+        this.numeroHistoria = numeroHistoria;
+        this.idHistoriaClinica = idHistoriaClinica;
+        this.fechaCreacionHistoria = fechaCreacionHistoria;
+        this.contactoEmergencia = contactoEmergencia;
+        this.telefonoEmergencia = telefonoEmergencia;
+        this.antecedentesMedicos = antecedentesMedicos;
     }
 
   /*  // Métodos adicionales para conversión de tipos si es necesario

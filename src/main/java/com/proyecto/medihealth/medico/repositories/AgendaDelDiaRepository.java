@@ -41,7 +41,13 @@ public interface AgendaDelDiaRepository extends JpaRepository<Agenda, Integer> {
             "p.sexo as sexo, " +
             "p.direccion as direccion, " +
             "p.ultima_cita as ultimaCita, " +
-            "p.proxima_cita as proximaCita " +
+            "p.proxima_cita as proximaCita, " +
+            "hc.id as idHistoriaClinica, " +
+            "hc.numero_historia as numeroHistoria, " +
+            "hc.fecha_creacion as fechaCreacionHistoria, " +
+            "hc.contacto_emergencia as contactoEmergencia, " +
+            "hc.telefono_emergencia as telefonoEmergencia, " +
+            "hc.antecedentes_medicos as antecedentesMedicos " +
             "FROM agendas a " +
             "JOIN detalle_agenda da ON a.id_agenda = da.id_agenda " +
             "JOIN consultorios c ON da.id_consultorio = c.id_consultorio " +
@@ -49,6 +55,7 @@ public interface AgendaDelDiaRepository extends JpaRepository<Agenda, Integer> {
             "JOIN usuarios um ON m.documento_identidad = um.documento_identidad " +
             "LEFT JOIN pacientes p ON da.id_paciente = p.id_paciente " +
             "LEFT JOIN usuarios up ON p.documento_identidad = up.documento_identidad " +
+            "LEFT JOIN historia_clinica hc ON p.id_paciente = hc.paciente_id " +
             "WHERE a.fecha_cita = :fecha " +
             "AND c.id_consultorio = :idConsultorio " +
             "ORDER BY da.hora_inicio ASC",
