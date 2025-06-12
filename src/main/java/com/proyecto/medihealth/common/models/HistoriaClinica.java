@@ -4,6 +4,7 @@ package com.proyecto.medihealth.common.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import lombok.*;
@@ -21,10 +22,7 @@ public class HistoriaClinica {
     private int id;
 
     @Column(name = "numero_historia")
-    private long numeroHistoria;
-
-    @Column(name = "paciente_id", nullable = false)
-    private String pacienteId;
+    private int numeroHistoria;
 
     @Column(name = "fecha_creacion", nullable = false)
     private String fechaCreacion;
@@ -36,7 +34,7 @@ public class HistoriaClinica {
     private int telefonoEmergencia;
 
     @Column(name = "antecedentes_medicos")
-    private String AntecedentesMedicos;
+    private String antecedentesMedicos;
 
 
 
@@ -56,12 +54,12 @@ public class HistoriaClinica {
     public HistoriaClinica() {
     }
 
-    public HistoriaClinica(String pacienteId, String fechaCreacion, String contactoEmergencia, int telefonoEmergencia, String antecedentesMedicos) {
-        this.pacienteId = pacienteId;
+    public HistoriaClinica( String fechaCreacion, String contactoEmergencia, int telefonoEmergencia, String antecedentesMedicos) {
+
         this.fechaCreacion = fechaCreacion;
         this.contactoEmergencia = contactoEmergencia;
         this.telefonoEmergencia = telefonoEmergencia;
-        this.AntecedentesMedicos = antecedentesMedicos;
+        this.antecedentesMedicos = antecedentesMedicos;
 
     }
 }

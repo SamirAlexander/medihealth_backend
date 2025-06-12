@@ -10,30 +10,22 @@ import java.util.List;
 @Getter
 @Setter
 public class HistoriaClinicaDTO {
-    private Long numeroHistoria;
-    private String pacienteId;
+    private Integer numeroHistoria;
     private String fechaCreacion;
     private String contactoEmergencia;
     private int telefonoEmergencia;
     private String antecedentesMedicos;
-    private List<RecordMedicoDTO> recordsMedicos;
+    private List<RecordMedicoDTO> recordMedico;
 
     // Getters y setters
-    public Long  getNumeroHistoria() {
+    public Integer  getNumeroHistoria() {
         return numeroHistoria;
     }
 
-    public void setNumeroHistoria(Long numeroHistoria) {
+    public void setNumeroHistoria(Integer numeroHistoria) {
         this.numeroHistoria = numeroHistoria;
     }
 
-    public String getPacienteId() {
-        return pacienteId;
-    }
-
-    public void setPacienteId(String pacienteId) {
-        this.pacienteId = pacienteId;
-    }
 
     public String getFechaCreacion() {
         return fechaCreacion;
@@ -66,10 +58,10 @@ public class HistoriaClinicaDTO {
     }
 
     public List<RecordMedicoDTO> getRecordsMedicos() {
-        return recordsMedicos;
+        return recordMedico;
     }
 
-    public void setRecordsMedicos(List<RecordMedicoDTO> recordsMedicos) {
-        this.recordsMedicos = recordsMedicos;
+    public void setRecordMedico(List<RecordMedicoDTO> recordMedico) {
+        this.recordMedico = recordMedico;
     }
 }

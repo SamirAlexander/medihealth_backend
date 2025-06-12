@@ -66,7 +66,6 @@ public class HistoriaClinicaService {
 
     public HistoriaClinica createHistoriaClinica(HistoriaClinicaDTO historiaClinicaDTO) {
         HistoriaClinica historiaClinica = new HistoriaClinica();
-        historiaClinica.setPacienteId(historiaClinicaDTO.getPacienteId());
         historiaClinica.setFechaCreacion(historiaClinicaDTO.getFechaCreacion());
         historiaClinica.setContactoEmergencia(historiaClinicaDTO.getContactoEmergencia());
         historiaClinica.setTelefonoEmergencia(historiaClinicaDTO.getTelefonoEmergencia());
@@ -108,8 +107,9 @@ public class HistoriaClinicaService {
         return historiaGuardada;
     }
 
-    private Long generarNumeroHistoria() {
-        // Implementación simple - en producción usarías una secuencia o método más robusto
-        return System.currentTimeMillis();
+    // Generar un número de historia incremental simple
+    private Integer generarNumeroHistoria() {
+        int count = historiaClinicaRepository.findAll().size();
+        return 1000 + count;  // Ajusta el prefijo si quieres otra base
     }
 }

@@ -51,7 +51,7 @@ public class RecordMedicoService {
                 .orElseThrow(() -> new RuntimeException("Historia clínica no encontrada"));
     }
 
-    public HistoriaClinica obtenerHistoriaClinicaPorNumeroHistoria(long id) {
+    public HistoriaClinica obtenerHistoriaClinicaPorNumeroHistoria(int id) {
         return historiaClinicaRepository.findByNumeroHistoria(id)
                 .orElseThrow(() -> new RuntimeException("Historia clínica no encontrada"));
     }

@@ -14,7 +14,7 @@ public class RecordMedico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private int id;
 
     @Column(name = "record_medico", columnDefinition = "TEXT")
     private String recordMedico;

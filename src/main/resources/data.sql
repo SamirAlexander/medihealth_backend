@@ -150,28 +150,28 @@ INSERT INTO consultorios (numero_consultorio, id_medico) VALUES
 
 -- Insertar en historia_clinica
 INSERT INTO historia_clinica
-(antecedentes_medicos, contacto_emergencia, fecha_creacion, numero_historia, paciente_id, telefono_emergencia, id_paciente)
+(antecedentes_medicos, contacto_emergencia, fecha_creacion, numero_historia, telefono_emergencia, id_paciente)
 VALUES
-('Diabetes tipo 2', 'Laura Pérez', '2025-04-01', 1001, 201, '5551234', 1),
-('Hipertensión', 'Carlos Gómez', '2025-04-03', 1002, 202, '5555678', 2),
-('Asma', 'María López', '2025-04-04', 1003, 203, '5559012', 3),
-('Alergia a penicilina', 'Ana Torres', '2025-04-05', 1004, 204, '5551111', 4),
-('Enfermedad celíaca', 'Luis Martínez', '2025-04-05', 1005, 205, '5552222', 5),
-('Migrañas crónicas', 'Esteban Ríos', '2025-04-06', 1006, 206, '5553333', 6),
-('Insuficiencia renal', 'Marta Sánchez', '2025-04-06', 1007, 207, '5554444', 7),
-('Artritis reumatoide', 'Tomás Díaz', '2025-04-07', 1008, 208, '5555555', 8),
-('Hipotiroidismo', 'Natalia Vega', '2025-04-07', 1009, 209, '5556666', 9),
-('Epilepsia', 'Ricardo Ruiz', '2025-04-08', 1010, 210, '5557777', 10),
-('Depresión', 'Daniela Mora', '2025-04-08', 1011, 211, '5558888', 11),
-('Colesterol alto', 'Iván Castro', '2025-04-09', 1012, 212, '5559999', 12),
-('Lupus', 'Claudia León', '2025-04-09', 1013, 213, '5550001', 13),
-('Asma', 'Silvia Torres', '2025-04-10', 1014, 214, '5550002', 14),
-('Obesidad', 'Jorge Méndez', '2025-04-10', 1015, 215, '5550003', 15),
-('Enfermedad de Crohn', 'Patricia Gil', '2025-04-11', 1016, 216, '5550004', 16),
-('Esclerosis múltiple', 'Héctor Bravo', '2025-04-11', 1017, 217, '5550005', 17),
-('Fibromialgia', 'Lucía Paredes', '2025-04-12', 1018, 218, '5550006', 18),
-('Glaucoma', 'Manuel Vela', '2025-04-12', 1019, 219, '5550007', 19),
-('Tabaquismo', 'Sofía Navarro', '2025-04-13', 1020, 220, '5550008', 20);
+('Diabetes tipo 2', 'Laura Pérez', '2025-04-01', 1001, '5551234', 1),
+('Hipertensión', 'Carlos Gómez', '2025-04-03', 1002, '5555678', 2),
+('Asma', 'María López', '2025-04-04', 1003, '5559012', 3),
+('Alergia a penicilina', 'Ana Torres', '2025-04-05', 1004, '5551111', 4),
+('Enfermedad celíaca', 'Luis Martínez', '2025-04-05', 1005, '5552222', 5),
+('Migrañas crónicas', 'Esteban Ríos', '2025-04-06', 1006, '5553333', 6),
+('Insuficiencia renal', 'Marta Sánchez', '2025-04-06', 1007, '5554444', 7),
+('Artritis reumatoide', 'Tomás Díaz', '2025-04-07', 1008, '5555555', 8),
+('Hipotiroidismo', 'Natalia Vega', '2025-04-07', 1009, '5556666', 9),
+('Epilepsia', 'Ricardo Ruiz', '2025-04-08', 1010, '5557777', 10),
+('Depresión', 'Daniela Mora', '2025-04-08', 1011, '5558888', 11),
+('Colesterol alto', 'Iván Castro', '2025-04-09', 1012, '5559999', 12),
+('Lupus', 'Claudia León', '2025-04-09', 1013, '5550001', 13),
+('Asma', 'Silvia Torres', '2025-04-10', 1014, '5550002', 14),
+('Obesidad', 'Jorge Méndez', '2025-04-10', 1015, '5550003', 15),
+('Enfermedad de Crohn', 'Patricia Gil', '2025-04-11', 1016, '5550004', 16),
+('Esclerosis múltiple', 'Héctor Bravo', '2025-04-11', 1017, '5550005', 17),
+('Fibromialgia', 'Lucía Paredes', '2025-04-12', 1018, '5550006', 18),
+('Glaucoma', 'Manuel Vela', '2025-04-12', 1019, '5550007', 19),
+('Tabaquismo', 'Sofía Navarro', '2025-04-13', 1020, '5550008', 20);
 
 
 -- Insertar en registro_clinico (1 o 2 registros por historia)

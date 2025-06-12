@@ -28,7 +28,7 @@ public class RecordMedicoController {
     // GET /administrador/record-medicos/{id}
     // Obtener un record médico por numero_historia.
     @GetMapping("/{id}")
-    public ResponseEntity<HistoriaClinica> getRecordMedico(@PathVariable long id) {
+    public ResponseEntity<HistoriaClinica> getRecordMedico(@PathVariable int id) {
         HistoriaClinica historiaClinica = recordMedicoService.obtenerHistoriaClinicaPorNumeroHistoria(id);
         return ResponseEntity.ok(historiaClinica);
     }
