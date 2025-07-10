@@ -19,7 +19,7 @@ public class DetalleAgendaPController {
     @Autowired
     private DetalleAgendaPService detalleAgendaPService;
 
-    // GET para obtener horarios disponibles
+    // GET para obtener horarios disponibles por fecha y consultorio
     //GET/paciente/asignacionCita/disponibles?fecha=&idConsultorio=
     @GetMapping("/disponibles")
     public ResponseEntity<List<DetalleAgendaPDTO>> getHorariosDisponibles(
@@ -30,6 +30,7 @@ public class DetalleAgendaPController {
         List<DetalleAgendaPDTO> disponibles = detalleAgendaPService.buscarDisponibles(fecha, idMedico, idConsultorio);
         return ResponseEntity.ok(disponibles);
     }
+
     // POST para agendar una cita
     // POST/paciente/asignacionCita/agendar/{idDetalle}?idPaciente=
     @PostMapping("/agendar/{idDetalle}")

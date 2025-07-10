@@ -1,12 +1,10 @@
 package com.proyecto.medihealth.paciente.services;
 
-import com.proyecto.medihealth.administrador.dtos.DetalleAgendaDTO;
+
 import com.proyecto.medihealth.administrador.repositories.AgendaRepository;
 import com.proyecto.medihealth.administrador.repositories.PacienteRepository;
-import com.proyecto.medihealth.common.models.Agenda;
 import com.proyecto.medihealth.common.models.DetalleAgenda;
 import com.proyecto.medihealth.common.models.Paciente;
-import com.proyecto.medihealth.medico.dtos.AgendaDelDiaDTO;
 import com.proyecto.medihealth.paciente.dtos.DetalleAgendaPDTO;
 import com.proyecto.medihealth.paciente.repositories.DetalleAgendaPRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +35,18 @@ public class DetalleAgendaPService {
         // Aquí puedes aplicar el filtro de médico si decides extender el query
         return detalleAgendaPRepository.findHorariosDisponiblesPaciente(fecha, idConsultorio);
     }
+    /**
+     * Obtener horarios disponibles para el paciente por especialidad del médico.
+     */
+    public List<DetalleAgendaPDTO> buscarDisponiblesPorEspecialidad(Date fecha, Integer idConsultorio, String especialidad) {
+        if (fecha == null || idConsultorio == null || especialidad == null || especialidad.isEmpty()) {
+            throw new IllegalArgumentException("La fecha, el consultorio y la especialidad son obligatorios.");
+        }
+
+        // Aquí puedes aplicar el filtro de especialidad si decides extender el query
+        return detalleAgendaPRepository.findHorariosDisponiblesPaciente(fecha, idConsultorio);
+    }
+
 
     /**
      * Agendar una cita a un paciente, asignándolo a un detalle_agenda disponible.
