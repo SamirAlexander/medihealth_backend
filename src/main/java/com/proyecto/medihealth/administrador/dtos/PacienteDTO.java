@@ -13,7 +13,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class PacienteDTO {
+public class  PacienteDTO {
 
   // private int idUsuario;
 

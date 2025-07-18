@@ -21,11 +21,15 @@ public class CitaAsignadaDTO {
     private String especialidad;
     private String nombreMedico;
     private String apellidoMedico;
+    private String documentoIdentidadPaciente;
+    private Integer idPaciente;
+    private String nombrePaciente;
+    private String apellidoPaciente;
 
     public CitaAsignadaDTO() {
         // Constructor por defecto
     }
-    public CitaAsignadaDTO(Integer idAgenda, Date fechaCita, Integer idDetalleAgenda, Time horaInicio, Time horaFin, String disponibilidad, Integer idConsultorio, String numeroConsultorio, Integer idMedico, String especialidad, String nombreMedico, String apellidoMedico) {
+    public CitaAsignadaDTO(Integer idAgenda, Date fechaCita, Integer idDetalleAgenda, Time horaInicio, Time horaFin, String disponibilidad, Integer idConsultorio, String numeroConsultorio, Integer idMedico, String especialidad, String nombreMedico, String apellidoMedico, String documentoIdentidadPaciente, Integer idPaciente, String nombrePaciente, String apellidoPaciente) {
         this.idAgenda = idAgenda;
         this.fechaCita = fechaCita;
         this.idDetalleAgenda = idDetalleAgenda;
@@ -38,5 +42,10 @@ public class CitaAsignadaDTO {
         this.especialidad = especialidad;
         this.nombreMedico = nombreMedico;
         this.apellidoMedico = apellidoMedico;
+        this.documentoIdentidadPaciente = documentoIdentidadPaciente;
+        this.idPaciente = idPaciente;
+        this.nombrePaciente = nombrePaciente;
+        this.apellidoPaciente = apellidoPaciente;
     }
+
 }

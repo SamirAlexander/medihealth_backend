@@ -1,9 +1,7 @@
 package com.proyecto.medihealth.paciente.repositories;
 
-import com.proyecto.medihealth.administrador.dtos.DetalleAgendaDTO;
-import com.proyecto.medihealth.common.models.Agenda;
+
 import com.proyecto.medihealth.common.models.DetalleAgenda;
-import com.proyecto.medihealth.medico.dtos.AgendaDelDiaDTO;
 import com.proyecto.medihealth.paciente.dtos.DetalleAgendaPDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -30,12 +28,12 @@ public interface DetalleAgendaPRepository extends JpaRepository<DetalleAgenda, I
         m.id_medico as idMedico,
         m.especialidad as especialidad,
         um.nombre as nombreMedico,
-        um.apellido as apellidoMedico
+        um.apellido as apellidoMedico        
     FROM agendas a
     JOIN detalle_agenda da ON a.id_agenda = da.id_agenda
     JOIN consultorios c ON da.id_consultorio = c.id_consultorio
     JOIN medicos m ON c.id_medico = m.id_medico
-    JOIN usuarios um ON m.documento_identidad = um.documento_identidad
+    JOIN usuarios um ON m.documento_identidad = um.documento_identidad               
     WHERE a.fecha_cita = :fecha
       AND c.id_consultorio = :idConsultorio
       AND da.disponibilidad = 'Disponible'
@@ -46,4 +44,10 @@ public interface DetalleAgendaPRepository extends JpaRepository<DetalleAgenda, I
             @Param("idConsultorio") Integer idConsultorio
 
     );
+    // NUEVO MÉTODO para obtener la cita actual de un paciente
+    @Query("SELECT da FROM DetalleAgenda da WHERE da.paciente.idPaciente = :idPaciente AND da.disponibilidad = 'Ocupado' ORDER BY da.horaInicio DESC")
+    List<DetalleAgenda> findAllByPacienteIdAndDisponibilidadIgnoreCase(Integer idPaciente, String disponibilidad);
+
+
+
 }

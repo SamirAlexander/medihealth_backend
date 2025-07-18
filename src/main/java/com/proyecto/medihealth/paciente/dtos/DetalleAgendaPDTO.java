@@ -22,10 +22,13 @@ public class DetalleAgendaPDTO {
     private String nombreMedico;
     private String apellidoMedico;
 
+
     public DetalleAgendaPDTO() {
         // Constructor por defecto
     }
-    public DetalleAgendaPDTO(Integer idAgenda, Date fechaCita, Integer idDetalleAgenda, Time horaInicio, Time horaFin, String disponibilidad, Integer idConsultorio, String numeroConsultorio, Integer idMedico, String especialidad, String nombreMedico, String apellidoMedico) {
+    public DetalleAgendaPDTO(Integer idAgenda, Date fechaCita, Integer idDetalleAgenda, Time horaInicio, Time horaFin,
+                             String disponibilidad, Integer idConsultorio, String numeroConsultorio, Integer idMedico,
+                             String especialidad, String nombreMedico, String apellidoMedico) {
         this.idAgenda = idAgenda;
         this.fechaCita = fechaCita;
         this.idDetalleAgenda = idDetalleAgenda;
@@ -39,6 +42,10 @@ public class DetalleAgendaPDTO {
         this.nombreMedico = nombreMedico;
         this.apellidoMedico = apellidoMedico;
     }
+
+
+
+
 
 
 
