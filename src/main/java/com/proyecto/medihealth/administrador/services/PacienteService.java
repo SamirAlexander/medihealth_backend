@@ -1,6 +1,9 @@
 package com.proyecto.medihealth.administrador.services;
 
 import java.util.List;
+
+import com.proyecto.medihealth.administrador.repositories.UsuarioRepository;
+import com.proyecto.medihealth.common.models.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.proyecto.medihealth.administrador.dtos.PacienteDTO;
@@ -12,9 +15,13 @@ public class PacienteService {
 
   @Autowired
   private PacienteRepository pacienteRepository;
+  private UsuarioRepository usuarioRepository;
 
   // POST /Crear nuevo paciente
   public Paciente crearPaciente(PacienteDTO pacienteDTO) {
+
+
+
     Paciente paciente = new Paciente();
     paciente.setIdPaciente(pacienteDTO.getIdPaciente());
     paciente.setHistorialMedico(pacienteDTO.getHistorialMedico());
@@ -24,6 +31,7 @@ public class PacienteService {
     paciente.setDireccion(pacienteDTO.getDireccion());
     paciente.setUltimaCita(pacienteDTO.getUltimaCita());
     paciente.setProximaCita(pacienteDTO.getProximaCita());
+
 
     return pacienteRepository.save(paciente);
   }
@@ -53,6 +61,7 @@ public class PacienteService {
       paciente.setDireccion(pacienteDTO.getDireccion());
       paciente.setUltimaCita(pacienteDTO.getUltimaCita());
       paciente.setProximaCita(pacienteDTO.getProximaCita());
+
 
       return pacienteRepository.save(paciente);
     }
